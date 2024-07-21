@@ -22,11 +22,8 @@
   tags: kubevip
   when: kube_vip_lb_ip_range is defined
 
-- name: Init cluster by running k3s server
-  command: "k3s server {{ server_init_args }} &"
-  async: 600
-  poll: 0
-  ignore_errors: true
+- name: Init cluster by running k3s server in the background
+  shell: nohup k3s server {{ server_init_args }} </dev/null >/dev/null 2>&1 &
 
 - name: Verification
   block:
