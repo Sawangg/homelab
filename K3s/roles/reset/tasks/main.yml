@@ -1,0 +1,32 @@
+---
+- name: Stop k3s
+  script: /usr/local/bin/k3s-killall.sh
+  become: true
+  failed_when: false
+
+- name: RUN pkill -9 -f "k3s/data/[^/]+/bin/containerd-shim-runc"
+  register: pkill_containerd_shim_runc
+  command: pkill -9 -f "k3s/data/[^/]+/bin/containerd-shim-runc"
+  changed_when: "pkill_containerd_shim_runc.rc == 0"
+  failed_when: false
+
+- name: Remove service files, binaries and data
+  file:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - /usr/local/bin/k3s
+    - /etc/rancher/k3s
+    - /run/k3s
+    - /run/flannel
+    - /etc/rancher/
+    - /var/lib/kubelet
+    - /var/lib/rancher/k3s
+    - /var/lib/rancher/
+    - /var/lib/cni/
+    - /etc/cni/net.d
+
+- name: Remove tmp directory used for manifests
+  file:
+    path: /tmp/k3s
+    state: absent
