@@ -1,10 +1,5 @@
 ---
 k3s_version: v1.29.2+k3s1
-# this is the user that has ssh access to these machines
-ansible_user: leo
-
-# Use doas instead of sudo (remove if using sudo)
-ansible_become_method: doas
 
 # interface which will be used for flannel
 flannel_iface: "eth0"
@@ -96,7 +91,7 @@ metal_lb_speaker_tag_version: "v0.14.3"
 metal_lb_controller_tag_version: "v0.14.3"
 
 # metallb ip range for load balancer
-metal_lb_ip_range: "192.168.30.80-192.168.30.90"
+metal_lb_ip_range: "192.168.1.80-192.168.1.90"
 
 # Only enable this if you have set up your own container registry to act as a mirror / pull-through cache
 # (harbor / nexus / docker's official registry / etc).

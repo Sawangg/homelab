@@ -1,8 +1,22 @@
 # dotfiles-server
 
-This is a collection of Ansible playbooks for my homelab to run services on a Kubernetes cluster. This contains the following services:
-- Wireguard
-- Altserver
+This is a collection of Ansible playbooks to run services on a Kubernetes cluster. I'm currently running them on my
+homelab. This repository contains the following services:
+- SearxNG
 - Technitium
+- Wireguard
 
-Everything can be installed in one command once the K3s cluster as been created using the Ansible playbook found in `K3s/`
+## ☸️ Deploy our cluster
+We can deploy our Kubernetes cluster by running
+```sh
+ansible-playbook -k -K -e @global_vars.yml -e @K3s/vars.yml K3s/playbook-deploy.yml
+```
+## 🔥 Reset our cluster
+```sh
+ansible-playbook -k -K -e @global_vars.yml -e @K3s/vars.yml K3s/playbook-reset.yml
+```
+
+## Deploy and reset services
+You can find the playbooks and documentation for each service in their respective folders.
+
+_You can remove `-k -K` if you don't need a SSH password on your hosts_

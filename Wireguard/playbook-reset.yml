@@ -1,0 +1,34 @@
+---
+- name: Reset Wireguard
+  hosts: all
+  tasks:
+    - name: Copy data folder to target hosts
+      copy:
+        src: ./data/
+        dest: /tmp/data/
+        mode: '0755'
+
+    - name: Delete deployment
+      k8s:
+        state: absent
+        src: /tmp/data/deployment.yml
+
+    - name: Delete service
+      k8s:
+        state: absent
+        src: /tmp/data/service.yml
+
+    - name: Delete volume
+      k8s:
+        state: absent
+        src: /tmp/data/volume.yml
+
+    - name: Delete namespace
+      k8s:
+        state: absent
+        src: /tmp/data/namespace.yml
+
+    - name: Cleanup the data folder
+      file:
+        path: /tmp/data/
+        state: absent
