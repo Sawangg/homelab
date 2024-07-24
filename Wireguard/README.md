@@ -2,7 +2,7 @@
 WireGuard is an extremely simple yet fast and modern VPN.
 
 ## ☸️ Deploy
-First, you need to modify the file `data/deployment.yml` with the correct value for the env variable called `WG_HOST`.  
+First, you need to modify the file `data/deployment.yml` with your [external IP address](https://checkip.amazonaws.com/) for the env variable called `WG_HOST`.  
 Then you can run the playbook
 ```sh
 ansible-playbook -k -K playbook-deploy.yml -e @../global_vars.yml
