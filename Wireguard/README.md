@@ -12,7 +12,7 @@ Once it's done, run this command to get the IP affected by the loadbalancer
 kubectl describe service wireguard-sv -n wg # Line LoadBalancer Ingress
 ```
 Finally, in your router, forward the port `51280` to the IP returned by the previous command.  
-You can now create a client by visting the IP address returned in your browser and connect to your VPN server.
+You can now create a client by visting in your browser of choice the IP address returned previously.
 
 ## 🔥 Reset
 Simply run the following Ansible playbook
