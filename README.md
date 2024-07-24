@@ -8,17 +8,23 @@ This is a collection of Ansible playbooks to deploy a Kubernetes cluster as well
 
 ## 🔄 Start from scratch
 You can follow the [wiki](https://github.com/Sawangg/dotfiles-server/wiki) to get started from no OS to a fully
-functionnal cluster with services. If you already have a machine running Linux you can just deploy the cluster.
+functionnal cluster with services. If you already have a server running Linux you can just deploy the cluster.
 
 ## ☸️ Deploy our Kubernetes cluster
-First, clone this repository and edit the `hosts.ini` file with the IPs on your local machines. You can then edit the
-file `K3s/vars.yml` to configure your environment. We can then deploy our cluster by running
+First, clone this repository locally and edit the `hosts.ini` file with the IPs of your infrastructure. Next, edit the
+file `K3s/vars.yml` to configure your Kuberbenetes cluster according to your environment. Then, run the following command to install all of Ansible's requirements
+```sh
+ansible-galaxy collection install -r requirements.yml
+```
+You might have to install [`netaddr`](https://pypi.org/project/netaddr/) on your local machine as well.
+Finally, deploy your cluster by running
 ```sh
 ansible-playbook -k -K -e @global_vars.yml -e @K3s/vars.yml K3s/playbook-deploy.yml # Remove -k -K if no SSH password
 ```
 This will create a fully functional cluster with MetalLB and kube-vip.
 
 ## 🔥 Reset our Kubernetes cluster
+Simply run the following playbook to remove Kubernetes and your services from your infrastructure
 ```sh
 ansible-playbook -k -K -e @global_vars.yml -e @K3s/vars.yml K3s/playbook-reset.yml
 ```
