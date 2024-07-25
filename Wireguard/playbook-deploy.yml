@@ -1,6 +1,7 @@
 ---
 - name: Deploy Wireguard
   hosts: all
+
   pre_tasks:
     # Only works on Void Linux
     - name: Install packaging dependency
@@ -20,31 +21,32 @@
   tasks:
     - name: Copy data folder to target hosts
       copy:
-        src: ./data/
-        dest: /tmp/data/
+        src: ./manifests/
+        dest: /tmp/wireguard/manifests/
         mode: '0755'
 
     - name: Apply namespace
       k8s:
         state: present
-        src: /tmp/data/namespace.yml
+        src: /tmp/wireguard/manifests/namespace.yml
 
     - name: Apply volume
       k8s:
         state: present
-        src: /tmp/data/volume.yml
+        src: /tmp/wireguard/manifests/volume.yml
 
     - name: Apply service
       k8s:
         state: present
-        src: /tmp/data/service.yml
+        src: /tmp/wireguard/manifests/service.yml
 
     - name: Apply deployment
       k8s:
         state: present
-        src: /tmp/data/deployment.yml
+        src: /tmp/wireguard/manifests/deployment.yml
 
+  post_tasks:
     - name: Cleanup data folder
       file:
-        path: /tmp/data/
+        path: /tmp/wireguard/manifests/
         state: absent
