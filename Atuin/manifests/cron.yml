@@ -1,0 +1,38 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: atuin-db-backup
+  namespace: atuin
+  labels:
+    app: atuin
+spec:
+  schedule: "0 0 * * 0" # Run every Sunday at midnight
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: atuin-db-backup-pg-dump
+            image: postgres:14
+            command: [
+              "/bin/bash",
+              "-c",
+              "pg_dump --host=postgres --username=atuin --format=c --file=/backup/atuin-backup-$(date +'%Y-%m-%d').pg_dump",
+            ]
+            env:
+              - name: PGPASSWORD
+                valueFrom:
+                  secretKeyRef:
+                    name: atuin-secrets
+                    key: ATUIN_DB_PASSWORD
+                    optional: false
+            volumeMounts:
+            - name: backup-volume
+              mountPath: /backup
+          restartPolicy: OnFailure
+          volumes:
+          - name: backup-volume
+            hostPath:
+              path: /mnt/k3s/atuin/backups/
+              type: Directory
