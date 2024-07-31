@@ -1,9 +1,7 @@
 # dotfiles-server
 
 This is a collection of Ansible playbooks to deploy a Kubernetes cluster as well as run various services. I'm currently running them in my homelab. This repository contains the following services:
-- Altserver (_iOS sideloading server_)
-- SearxNG (_Search engine_)
-- Technitium (_DNS server_)
+- Atuin (_Shell history manager_)
 - Wireguard (_VPN_)
 
 ## 🔄 Start from scratch
