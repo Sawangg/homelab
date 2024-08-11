@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: git-deployment
+  namespace: git
+  labels:
+    app: git
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: git
+  template:
+    metadata:
+      labels:
+        app: git
+    spec:
+      containers:
+      - name: git-container
+        image: rockstorm/git-server:latest
+        env:
+          - name: SSH_AUTHORIZED_KEYS_URL
+            value: https://github.com/Sawangg.keys
+          - name: REPOSITORIES_HOME_LINK
+            value: /srv/git
+        ports:
+        - containerPort: 22
+        volumeMounts:
+        - name: git-data
+          mountPath: /srv/git
+      volumes:
+      - name: git-data
+        persistentVolumeClaim:
+          claimName: git-pvc
