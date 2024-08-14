@@ -12,7 +12,7 @@ functionnal cluster with services. If you already have a server running Linux yo
 
 ## ☸️ Deploy our Kubernetes cluster
 First, clone this repository locally and edit the `hosts.ini` file with the IPs of your infrastructure. Next, edit the
-file `K3s/vars.yml` to configure your Kuberbenetes cluster according to your environment. Then, run the following command to install all of Ansible's requirements
+files `global_vars.yml` & `K3s/vars.yml` to configure your Kuberbenetes cluster according to your environment. Then, run the following command to install all of Ansible's requirements
 ```sh
 ansible-galaxy collection install -r requirements.yml
 ```
