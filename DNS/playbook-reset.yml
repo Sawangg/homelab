@@ -1,0 +1,46 @@
+---
+- name: Reset DNS resolver
+  hosts: all
+
+  tasks:
+    - name: Copy data folder to target hosts
+      copy:
+        src: ./manifests/
+        dest: /tmp/dns/manifests
+        mode: '0755'
+
+    - name: Delete deployment
+      k8s:
+        state: absent
+        src: /tmp/dns/manifests/deployment.yml
+
+    - name: Delete service
+      k8s:
+        state: absent
+        src: /tmp/dns/manifests/service.yml
+
+    - name: Delete volume
+      k8s:
+        state: absent
+        src: /tmp/dns/manifests/volume.yml
+
+    - name: Delete configmap
+      k8s:
+        state: absent
+        src: /tmp/dns/manifests/configmap.yml
+
+    - name: Delete secret
+      k8s:
+        state: absent
+        src: /tmp/dns/manifests/secret.yml
+
+    - name: Delete namespace
+      k8s:
+        state: absent
+        src: /tmp/dns/manifests/namespace.yml
+
+  post_tasks:
+    - name: Cleanup the data folder
+      file:
+        path: /tmp/dns/
+        state: absent
