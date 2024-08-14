@@ -12,7 +12,7 @@ ansible-playbook -k -K playbook-deploy.yml -e @../global_vars.yml
 ```
 Then get the ip affected by the loadbalancer
 ```sh
-kubectl describe service git-sv -n git # LoadBalancer Ingress
+kubectl describe service pihole-sv -n dns-resolver # LoadBalancer Ingress
 ```
 You can then access the admin interface in your browser at `http://<loadbalancer ip>/admin`. Feel free to assign the
 loadbalancer ip as your DNS server in your router or any machine.
