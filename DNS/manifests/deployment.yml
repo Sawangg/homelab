@@ -7,7 +7,7 @@ metadata:
   labels:
     app: pihole
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: pihole
@@ -33,11 +33,11 @@ spec:
           protocol: TCP
         resources:
           limits:
-            memory: "300Mi"
-            cpu: "250m"
+            memory: "600Mi"
+            cpu: "500m"
           requests:
-            memory: "50Mi"
-            cpu: "100m"
+            memory: "100Mi"
+            cpu: "200m"
         volumeMounts:
         - mountPath: /etc/pihole
           name: pihole-etc
@@ -55,7 +55,7 @@ metadata:
   labels:
     app: unbound
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: unbound
@@ -78,10 +78,10 @@ spec:
         resources:
           limits:
             memory: "300Mi"
-            cpu: "250m"
+            cpu: "500m"
           requests:
             memory: "50Mi"
-            cpu: "100m"
+            cpu: "250m"
         volumeMounts:
           - name: unbound-main-conf-volume
             mountPath: /opt/unbound/etc/unbound/unbound.conf
