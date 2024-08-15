@@ -10,7 +10,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: manual
   hostPath:
     path: "/mnt/k3s/wireguard" 
 
@@ -26,4 +25,3 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: manual

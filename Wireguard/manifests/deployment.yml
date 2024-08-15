@@ -16,7 +16,6 @@ spec:
       labels:
         app: wireguard
     spec:
-      restartPolicy: Always
       initContainers:
         - name: sysctls
           image: busybox
@@ -41,7 +40,7 @@ spec:
             - name: WG_HOST
               value: "176.186.164.124" # Replace by your public IP address (curl -s https://checkip.amazonaws.com)
             - name: WG_DEFAULT_DNS 
-              value: "9.9.9.9" # Replace by your own or any DNS server
+              value: "192.168.1.84" # Replace by your own or any DNS server
             - name: WG_DEFAULT_ADDRESS
               value: "10.33.0.x"
             - name: WG_MTU
@@ -65,9 +64,7 @@ spec:
           volumeMounts:
             - name: wireguard-volume 
               mountPath: /etc/wireguard
-
       volumes:
         - name: wireguard-volume
           persistentVolumeClaim:
             claimName: wireguard-pvc
-
