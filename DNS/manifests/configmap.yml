@@ -8,6 +8,7 @@ data:
   TZ: "Europe/Paris"
   PIHOLE_DNS_: "10.43.0.20" # Do not edit
   DNSSEC: "true"
+  WEBTHEME: "default-dark"
 
 ---
 apiVersion: v1
