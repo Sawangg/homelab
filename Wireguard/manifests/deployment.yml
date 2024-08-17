@@ -38,13 +38,11 @@ spec:
             protocol: TCP
           env:
             - name: WG_HOST
-              value: "176.186.164.124" # Replace by your public IP address (curl -s https://checkip.amazonaws.com)
-            - name: WG_DEFAULT_DNS 
+              value: "your public address" # Replace by your public IP address (curl -s https://checkip.amazonaws.com)
+            - name: WG_DEFAULT_DNS
               value: "192.168.1.84" # Replace by your own or any DNS server
             - name: WG_DEFAULT_ADDRESS
               value: "10.33.0.x"
-            - name: WG_MTU
-              value: "1420"
             - name: WG_POST_UP
               value: "iptables -t nat -A POSTROUTING -s 10.33.0.0/24 -o eth0 -j MASQUERADE"
             - name: "WG_POST_DOWN"
@@ -58,11 +56,11 @@ spec:
           resources:
             requests:
               memory: 64Mi
-              cpu: "100m"
+              cpu: "300m"
             limits:
-              memory: 256Mi
+              memory: 512Mi
           volumeMounts:
-            - name: wireguard-volume 
+            - name: wireguard-volume
               mountPath: /etc/wireguard
       volumes:
         - name: wireguard-volume

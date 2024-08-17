@@ -9,7 +9,6 @@ spec:
     storage: 1Gi
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: "/mnt/k3s/wireguard" 
 
