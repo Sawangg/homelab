@@ -7,7 +7,7 @@ metadata:
   labels:
     app: wireguard
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: wireguard
@@ -56,7 +56,7 @@ spec:
           resources:
             requests:
               memory: 64Mi
-              cpu: "300m"
+              cpu: "500m"
             limits:
               memory: 512Mi
           volumeMounts:
