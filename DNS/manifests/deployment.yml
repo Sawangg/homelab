@@ -34,17 +34,23 @@ spec:
         resources:
           limits:
             memory: "600Mi"
-            cpu: "500m"
+            cpu: "1000m"
           requests:
             memory: "100Mi"
-            cpu: "200m"
+            cpu: "500m"
         volumeMounts:
-        - mountPath: /etc/pihole
-          name: pihole-etc
+        - name: pihole-etc
+          mountPath: /etc/pihole
+        - name: pihole-adlists
+          mountPath: /etc/pihole/adlists.list
+          subPath: adlists.list
       volumes:
         - name: pihole-etc
           persistentVolumeClaim:
             claimName: pihole-pvc
+        - name: pihole-adlists
+          configMap:
+            name: pihole-adlists-configmap
 
 ---
 apiVersion: apps/v1

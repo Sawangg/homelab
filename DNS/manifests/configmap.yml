@@ -14,6 +14,22 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  name: pihole-adlists-configmap
+  namespace: dns-resolver
+data:
+  adlists.list: |
+    https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/ultimate.txt
+    https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt
+    https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-aggressive.txt
+    https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/doh-vpn-proxy-bypass.txt
+    https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt
+    https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/nosafesearch.txt
+    https://nsfw.oisd.nl
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
   name: unbound-configmap
   namespace: dns-resolver
 data:

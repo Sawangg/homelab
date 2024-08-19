@@ -30,7 +30,7 @@ metadata:
 spec:
   selector:
     app: unbound
-  clusterIP: 10.43.0.20
+  clusterIP: 10.43.0.20 # We need to set a fix internal ip to affect it to pihole
   ports:
     - name: 53-udp
       port: 53
