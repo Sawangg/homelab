@@ -25,15 +25,15 @@ cilium_bgp: false
 # bgp parameters for cilium cni. only active when cilium_iface is defined and cilium_bgp is true.
 cilium_bgp_my_asn: "64513"
 cilium_bgp_peer_asn: "64512"
-cilium_bgp_peer_address: "192.168.30.1"
-cilium_bgp_lb_cidr: "192.168.31.0/24"   # cidr for cilium loadbalancer ipam
+cilium_bgp_peer_address: "192.168.1.1"
+cilium_bgp_lb_cidr: "192.168.1.0/24"   # cidr for cilium loadbalancer ipam
 
 # apiserver_endpoint is virtual ip-address which will be configured on each master
 apiserver_endpoint: "192.168.1.222"
 
 # k3s_token is required masters can talk together securely
 # this token should be alpha numeric only
-k3s_token: "some-SUPER-DEDEUPER-secret-password"
+k3s_token: "secretpassword"
 
 # The IP on which the node is reachable in the cluster.
 # Here, a sensible default is provided, you can still override
@@ -73,7 +73,7 @@ kube_vip_tag_version: "v0.7.2"
 
 # kube-vip ip range for load balancer
 # (uncomment to use kube-vip for services instead of MetalLB)
-# kube_vip_lb_ip_range: "192.168.30.80-192.168.30.90"
+# kube_vip_lb_ip_range: "192.168.1.90-192.168.1.120"
 
 # metallb type frr or native
 metal_lb_type: "native"
@@ -84,14 +84,14 @@ metal_lb_mode: "layer2"
 # bgp options
 # metal_lb_bgp_my_asn: "64513"
 # metal_lb_bgp_peer_asn: "64512"
-# metal_lb_bgp_peer_address: "192.168.30.1"
+# metal_lb_bgp_peer_address: "192.168.1.1"
 
 # image tag for metal lb
 metal_lb_speaker_tag_version: "v0.14.3"
 metal_lb_controller_tag_version: "v0.14.3"
 
 # metallb ip range for load balancer
-metal_lb_ip_range: "192.168.1.80-192.168.1.90"
+metal_lb_ip_range: "192.168.1.90-192.168.1.120"
 
 # Only enable this if you have set up your own container registry to act as a mirror / pull-through cache
 # (harbor / nexus / docker's official registry / etc).

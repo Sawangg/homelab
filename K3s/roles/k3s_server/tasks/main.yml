@@ -23,7 +23,7 @@
   when: kube_vip_lb_ip_range is defined
 
 - name: Init cluster by running k3s server in the background
-  shell: nohup k3s server {{ server_init_args }} </dev/null >/dev/null 2>&1 &
+  shell: nohup k3s server {{ server_init_args }} </dev/null >/tmp/k3s_server.log 2>&1 &
 
 - name: Verification
   block:

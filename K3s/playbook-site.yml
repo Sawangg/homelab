@@ -24,21 +24,18 @@
 
 - name: Setup k3s servers
   hosts: master
-  environment: "{{ proxy_env | default({}) }}"
   roles:
     - role: k3s_server
       become: true
 
 - name: Configure k3s cluster
   hosts: master
-  environment: "{{ proxy_env | default({}) }}"
   roles:
     - role: k3s_server_post
       become: true
 
 - name: Storing kubeconfig in the playbook directory
   hosts: master
-  environment: "{{ proxy_env | default({}) }}"
   tasks:
     - name: Copying kubeconfig from {{ hostvars[groups[group_name_master | default('master')][0]]['ansible_hostname'] }}
       ansible.builtin.fetch:
