@@ -2,7 +2,7 @@
 
 This is a collection of Ansible playbooks to deploy a Kubernetes cluster as well as run various services. I'm currently running them in my homelab. This repository contains the following services:
 - Atuin (_Shell history manager_)
-- DNS (_Local recursive DNS with adblocking using PiHole & Unbound_)
+- PiHole & Unbound (_Local recursive DNS with blocking capabilities_)
 - Git (_Local git server to host personal stuff e.g. Obsidian notes_)
 - Immich (_Local photo storage & more_)
 - Wireguard (_VPN_)
