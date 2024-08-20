@@ -1,9 +1,4 @@
 ---
-- name: Deploy calico
-  include_tasks: calico.yml
-  tags: calico
-  when: calico_iface is defined and cilium_iface is not defined
-
 - name: Deploy cilium
   include_tasks: cilium.yml
   tags: cilium
