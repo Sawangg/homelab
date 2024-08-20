@@ -36,4 +36,4 @@ ansible-playbook -k -K -e @global_vars.yml -e @K3s/vars.yml -i hosts.ini K3s/pla
 You can find the playbooks and documentation for each service in their respective folders.
 
 ## Credits
-This repository Kubernetes cluster was inspired by [https://github.com/techno-tim/k3s-ansible/tree/master](https://github.com/techno-tim/k3s-ansible/tree/master)
+This repository Kubernetes cluster was inspired by [https://github.com/techno-tim/k3s-ansible](https://github.com/techno-tim/k3s-ansible)
