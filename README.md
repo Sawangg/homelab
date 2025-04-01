@@ -1,39 +1,35 @@
-# dotfiles-server
+# Homelab
 
-This is a collection of Ansible playbooks to deploy a Kubernetes cluster as well as run various services. I'm currently running them in my homelab. This repository contains the following services:
+GitOps repo for my bare metal Kubernetes cluster at home
+
+## Features
+
+- Supports 2 clusters setup with staging and production
+- Talos
+- FluxCD
+- Cilium for the full network stack
+  - Replace `Flannel` as the default CNI
+  - Replace default `kube-proxy`
+  - Used as default load balancer
+  - Supports new gateway API instead of Ingress (don't forget to pull the SIG (yml files))
+- Cert-manager using the gateway API
+- Renovate
+- Longhorn / Rook / Ceph
+
+Here is a list of deployed apps:
+
 - Atuin (_Shell history manager_)
 - PiHole & Unbound (_Local recursive DNS with blocking capabilities_)
 - Git (_Local git server to host personal stuff e.g. Obsidian notes_)
 - Immich (_Local photo storage & more_)
-- Wireguard (_VPN_)
-
-The Kubernetes cluster is configured with MetalLB (Flannel by default), kube-vip & etcd.
-
-## 🔄 Start from scratch
-You can follow the [wiki](https://github.com/Sawangg/dotfiles-server/wiki) to get started from no OS to a fully
-functionnal cluster with services. If you already have a server running Linux you can just deploy the cluster.
 
 ## ☸️ Deploy our Kubernetes cluster
-First, clone this repository locally and edit the `hosts.ini` file with the IPs of your infrastructure. Next, edit the
-files `global_vars.yml` & `K3s/vars.yml` to configure your Kuberbenetes cluster according to your environment. Then, run the following command to install all of Ansible's requirements
-```sh
-ansible-galaxy collection install -r requirements.yml
-```
-You might have to install [`netaddr`](https://pypi.org/project/netaddr/) on your local machine as well.
-Finally, deploy your cluster by running
-```sh
-ansible-playbook -k -K -e @global_vars.yml -e @K3s/vars.yml -i hosts.ini K3s/playbook-site.yml # Remove -k -K if no SSH password
-```
-This will create a fully functional cluster with MetalLB and kube-vip.
 
-## 🔥 Reset our Kubernetes cluster
-Simply run the following playbook to remove Kubernetes and your services from your infrastructure
-```sh
-ansible-playbook -k -K -e @global_vars.yml -e @K3s/vars.yml -i hosts.ini K3s/playbook-reset.yml
-```
+You'll need the following:
 
-## 🚀 Deploy and reset services
-You can find the playbooks and documentation for each service in their respective folders.
+- A GitHub personal access token with repo permissions. See the GitHub documentation on creating a personal access token.
+- A Cloudflare account with token to validate certificates with DNS challenges
 
-## Credits
-This repository Kubernetes cluster was inspired by [https://github.com/techno-tim/k3s-ansible](https://github.com/techno-tim/k3s-ansible)
+# References
+
+[https://docs.renovatebot.com/](https://docs.renovatebot.com/)

@@ -1,5 +1,0 @@
----
-# This is the user that has ssh access to these machines
-ansible_user: leo
-# Use doas instead of sudo (remove if using sudo)
-ansible_become_method: doas
