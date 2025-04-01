@@ -11,7 +11,7 @@ spec:
     branch: flux
   secretRef:
     name: flux-system
-  url: htpps://github.com/Sawangg/homelab
+  url: https://github.com/Sawangg/homelab
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
