@@ -4,12 +4,10 @@ ipam:
 kubeProxyReplacement: true
 
 operator:
+  # Can't have more replicas than nodes
   replicas: 1
 
 l2announcements:
-  enabled: true
-
-bgpControlPlane:
   enabled: true
 
 externalIPs:
@@ -17,8 +15,6 @@ externalIPs:
 
 gatewayAPI:
   enabled: true
-  enableAlpn: true
-  enableAppProtocol: true
 
 securityContext:
   capabilities:
@@ -44,6 +40,8 @@ cgroup:
     enabled: false
   hostRoot: /sys/fs/cgroup
 
+# Talos specific
+# https://www.talos.dev/latest/kubernetes-guides/configuration/kubeprism/
 k8sServiceHost: localhost
 k8sServicePort: 7445
 
@@ -52,8 +50,3 @@ k8sServicePort: 7445
 k8sClientRateLimit:
   qps: 15
   burst: 20
-
-ingressController:
-  enabled: true
-  loadbalancerMode: shared
-  default: true
