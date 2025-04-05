@@ -5,4 +5,3 @@ resources:
 - repository.yaml
 - deployment-crds.yaml
 - release.yaml
-# - deployment-crs.yaml # INFO: This depends on the CRDs deployment. Will happen after it
