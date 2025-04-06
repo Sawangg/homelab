@@ -4,3 +4,9 @@ resources:
 - namespace.yaml
 - repository.yaml
 - release.yaml
+configMapGenerator:
+  - name: external-dns-values
+    files:
+      - values.yaml=my-values.yaml
+configurations:
+  - kustomizeconfig.yaml

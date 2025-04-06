@@ -15,14 +15,6 @@ spec:
         name: external-dns-repo
         namespace: external-dns
       interval: 12h
-  values:
-    provider:
-      name: cloudflare
-    env:
-      - name: CF_API_TOKEN
-        valueFrom:
-          secretKeyRef:
-            name: external-dns-secret
-            key: token
-    sources: [ "gateway-httproute" ]
-    extraArgs: [ "default-targets=82.64.164.79" ]
+  valuesFrom:
+    - kind: ConfigMap
+      name: external-dns-values
