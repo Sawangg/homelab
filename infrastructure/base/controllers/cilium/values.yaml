@@ -54,4 +54,4 @@ k8sClientRateLimit:
 # Issue:
 bpf:
   masquerade: true
-  # hostLegacyRouting: true
+  hostLegacyRouting: true
