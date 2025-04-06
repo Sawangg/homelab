@@ -5,10 +5,10 @@ metadata:
   namespace: nginx
 spec:
   parentRefs:
-    - name: cilium-gateway
+    - name: http-gateway
       namespace: default
-  hostnames:
-    - "nginx.leomercier.dev"
+  # hostnames:
+    # - "nginx.leomercier.dev"
   rules:
     - matches:
         - path:
