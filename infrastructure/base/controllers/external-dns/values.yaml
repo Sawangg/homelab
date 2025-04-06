@@ -7,4 +7,4 @@ env:
         name: external-dns-secret
         key: token
 sources: [ "gateway-httproute" ]
-extraArgs: [ "default-targets=82.64.164.79" ]
+extraArgs: [ "--default-targets=82.64.164.79" ]
