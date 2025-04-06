@@ -52,6 +52,5 @@ k8sClientRateLimit:
   burst: 20
 
 # Issue:
-bpf:
-  masquerade: true
-  hostLegacyRouting: true
+endpointRoutes:
+  enabled: true
