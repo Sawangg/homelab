@@ -50,3 +50,7 @@ k8sServicePort: 7445
 k8sClientRateLimit:
   qps: 15
   burst: 20
+
+# Issue:
+bpf:
+  hostLegacyRouting: true
