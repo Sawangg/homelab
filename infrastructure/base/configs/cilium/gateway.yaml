@@ -6,9 +6,6 @@ metadata:
   namespace: default
 spec:
   gatewayClassName: cilium
-  addresses:
-  - type: IPAddress
-    value: 192.168.1.10
   listeners:
   - name: web-gw
     protocol: HTTP
