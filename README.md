@@ -3,23 +3,52 @@
 State of the art multi-cluster GitOps repository for homelab use. Currently used with my bare metal Kubernetes clusters
 at home to host a bunch of useful apps.
 
-## Features
+## 🏗️ Infrastructure
 
-- Supports 2 Kubernetes clusters staging and production
-- Fully managed by `FluxCD`, adhering to GitOps principles
-- Supports any Git provider, simply change the repository `FluxCD` watches
-- Uses `External Secrets Operator` to manage secrets remotely & securely from a list of providers
-- `Cilium` for the full network stack
-  - Replace `Flannel` as the default CNI
-  - Replace `kube-proxy` as the default proxy
-  - Used as the default load balancer
-  - Using the Gateway API
-- `Cert-manager` for automatic SSL certificates
-- `External-DNS` to manage automatically my DNS records
-- `Renovate` to automatically inform of new updates
-- `Rook + Ceph` for distributed storage across the cluster
-
-Here is a list of deployed apps:
+<table>
+  <tr>
+    <td></td>
+    <td>Name</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td><a href="https://talos.dev/" title="Talos" target="_blank"> <img src="https://avatars.githubusercontent.com/u/13804887" alt="talos" width="35" height="35" /></a></td>
+    <td>Talos</td>
+    <td>Immutable Linux distro for Kubernetes, deployed with <code>Omni</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://cilium.io/" title="Cilium" target="_blank"> <img src="https://avatars.githubusercontent.com/u/21054566" alt="cilium" width="40" height="40" /></a></td>
+    <td>Cilium</td>
+    <td>Full network stack, replaces <code>Flannel</code> as the CNI and <code>kube-proxy</code> from <code>Talos</code>. Also used as the Load Balancer with Gateway API support</td>
+  </tr>
+  <tr>
+    <td><a href="https://fluxcd.io/" title="FluxCD" target="_blank"> <img src="https://avatars.githubusercontent.com/u/52158677" alt="fluxcd" width="60" height="40" /></a></td>
+    <td>FluxCD</td>
+    <td>Fully managed Kubernetes deployment using <code>GitOps</code> practices</td>
+  </tr>
+  <tr>
+    <td><a href="https://external-secrets.io/" title="External Secrets Operator" target="_blank"> <img src="https://avatars.githubusercontent.com/u/68335991" alt="eso" width="35" height="35" /></a></td>
+    <td>External Secrets Operator</td>
+    <td>Manage secrets remotely & securely from a list of providers</td>
+  </tr>
+  <tr>
+    <td><a href="https://cert-manager.io/" title="Cert-Manager" target="_blank"> <img src="https://avatars.githubusercontent.com/u/39950598" alt="cert-manager" width="40" height="40" /></a></td>
+    <td>Cert Manager</td>
+    <td>Automatic SSL certificates with Gateway API support</td>
+  </tr>
+  <tr>
+    <td><a href="https://kubernetes-sigs.github.io/external-dns/latest/" title="ExternalDNS" target="_blank"> <img src="https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/docs/img/external-dns.png" alt="externaldns" width="50" height="45" /></a></td>
+    <td>ExternalDNS</td>
+    <td>Manage automatically the DNS records of domains listed in the Gateway API's routes</td>
+  </tr>
+  <tr>
+    <td><a href="https://docs.mend.io/renovate/latest/" title="Renovate" target="_blank"> <img src="https://avatars.githubusercontent.com/u/38656520" alt="renovate" width="35" height="35" /></a></td>
+    <td>Renovate</td>
+    <td>Automatically inform of new updates for deployed apps in the cluster</td>
+  </tr>
+</table>
+  
+## 📦 Apps
 
 - Atuin (_Shell history manager_)
 - PiHole & Unbound (_Local recursive DNS with blocking capabilities_)
@@ -43,8 +72,3 @@ permissions as above.
 
 Add the following secrets to your secret provider of choice: `dns_provider_challenge_token` &
 `dns_provider_management_token`
-
-# References
-
-[https://docs.renovatebot.com/](https://docs.renovatebot.com/)  
-[https://external-secrets.io/latest/provider/gitlab-variables/](https://external-secrets.io/latest/provider/gitlab-variables/)
