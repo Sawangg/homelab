@@ -32,6 +32,6 @@ spec:
   hostnames:
     - "nginx.leomercier.dev"
   rules:
-      backendRefs:
+    - backendRefs:
         - name: nginx
           port: 80
