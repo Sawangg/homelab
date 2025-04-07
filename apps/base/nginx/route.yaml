@@ -6,7 +6,7 @@ metadata:
   namespace: nginx
 spec:
   parentRefs:
-    - name: http-gateway
+    - name: https-gateway
       namespace: default
   hostnames:
     - nginx.leomercier.dev
