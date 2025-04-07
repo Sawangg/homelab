@@ -7,8 +7,8 @@ at home to host a bunch of useful apps.
 
 <table>
   <tr>
-    <td>Apps</td>
-    <td>Description</td>
+    <th>Apps</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td><a href="https://talos.dev/" title="Talos" target="_blank"> <img src="https://avatars.githubusercontent.com/u/13804887" alt="talos" width="35" height="35" /></a></td>
@@ -28,7 +28,7 @@ at home to host a bunch of useful apps.
   </tr>
   <tr>
     <td><a href="https://cert-manager.io/" title="Cert-Manager" target="_blank"> <img src="https://avatars.githubusercontent.com/u/39950598" alt="cert-manager" width="40" height="40" /></a></td>
-    <td>Automatic SSL certificates with Gateway API support</td>
+    <td>Automatic x.509 certificates management with Gateway API support</td>
   </tr>
   <tr>
     <td><a href="https://kubernetes-sigs.github.io/external-dns/latest/" title="ExternalDNS" target="_blank"> <img src="https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/docs/img/external-dns.png" alt="externaldns" width="50" height="45" /></a></td>
@@ -40,7 +40,7 @@ at home to host a bunch of useful apps.
   </tr>
 </table>
   
-## 📦 Apps
+## 📦 Applications
 
 - Atuin (_Shell history manager_)
 - PiHole & Unbound (_Local recursive DNS with blocking capabilities_)
