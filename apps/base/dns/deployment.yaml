@@ -4,9 +4,17 @@ kind: Deployment
 metadata:
   name: pihole
   namespace: dns
+  labels:
+    app: pihole
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: pihole
   template:
+    metadata:
+      labels:
+        app: pihole
     spec:
       containers:
       - name: pihole
