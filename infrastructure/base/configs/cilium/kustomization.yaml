@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - ippool.yaml
   - l2policy.yaml
-  - gateway.yaml
+  - external-https-gateway.yaml
+  - internal-https-gateway.yaml
