@@ -34,10 +34,10 @@ spec:
         resources:
           limits:
             memory: "300Mi"
-            cpu: "1000m"
+            cpu: "2000m"
           requests:
             memory: "100Mi"
-            cpu: "500m"
+            cpu: "1000m"
         volumeMounts:
         # - name: pihole-etc
         #   mountPath: /etc/pihole
