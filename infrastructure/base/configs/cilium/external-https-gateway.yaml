@@ -6,7 +6,7 @@ metadata:
   namespace: default
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-issuer
-    external-dns.alpha.kubernetes.io/hostname: "" # Prevent wild-card to be added to DNS records
+    external-dns.alpha.kubernetes.io/exclude: "true"
 spec:
   gatewayClassName: cilium
   infrastructure:
