@@ -35,15 +35,18 @@ at home to host a bunch of useful apps.
     <td>Manage automatically the DNS records of domains listed in the Gateway API's routes</td>
   </tr>
   <tr>
+    <td><a href="https://pi-hole.net/" title="Pi-hole" target="_blank"> <img src="https://avatars.githubusercontent.com/u/16827203" alt="pi-hole" width="40" height="40" /></a></td>
+    <td>Custom DNS server with blocking capabilities to route internal traffic</td>
+  </tr>
+  <tr>
     <td><a href="https://docs.mend.io/renovate/latest/" title="Renovate" target="_blank"> <img src="https://avatars.githubusercontent.com/u/38656520" alt="renovate" width="35" height="35" /></a></td>
     <td>Automatically inform of new updates for deployed apps in the cluster</td>
   </tr>
 </table>
-  
+
 ## 📦 Applications
 
 - Atuin (_Shell history manager_)
-- PiHole & Unbound (_Local recursive DNS with blocking capabilities_)
 - Git (_Local git server to host personal stuff e.g. Obsidian notes_)
 - Immich (_Local photo storage & more_)
 
@@ -60,8 +63,7 @@ for Admnistration & Contents
 - Another API token of the same provider to manage DNS records. Using `Cloudflare`, the token should have the same
 permissions as above.
 
-### Secrets
+### 🔑 Secrets
 
-Add the following secrets to your secret provider of choice: `dns_provider_challenge_token` &
-`dns_provider_management_token`
-
+Add the following secrets to your secret provider of choice: `dns_provider_challenge_token`,
+`dns_provider_management_token` & `pihole_password`
