@@ -6,6 +6,8 @@ env:
       secretKeyRef:
         name: external-dns-secret
         key: token
-sources: [ "gateway-httproute" ]
-# NOTE: Change this to your public ip address
-extraArgs: [ "--default-targets=82.64.164.79", "--annotation-filter=\"external-dns.alpha.kubernetes.io/exclude notin (true)\"" ]
+sources:
+  - gateway-httproute
+extraArgs:
+  - --default-targets=82.64.164.79 # NOTE: Change this to your public ip address
+  - --annotation-filter="external-dns.alpha.kubernetes.io/exclude notin (true)"
