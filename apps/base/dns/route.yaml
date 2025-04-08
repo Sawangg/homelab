@@ -5,7 +5,7 @@ metadata:
   name: pihole-https-route
   namespace: dns
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: ""
+    external-dns.alpha.kubernetes.io/exclude: "true"
 spec:
   parentRefs:
     - name: internal-https-gateway
