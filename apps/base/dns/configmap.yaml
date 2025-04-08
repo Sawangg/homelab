@@ -6,7 +6,8 @@ metadata:
   namespace: dns
 data:
   TZ: "Europe/Paris"
-  FTLCONF_dns_upstreams: 9.9.9.9
+  FTLCONF_dns_listeningMode: "all"
+  # FTLCONF_dns_upstreams: 9.9.9.9
   FTLCONF_dns_dnssec: "true"
   FTLCONF_webserver_interface_theme: "default-dark"
 
