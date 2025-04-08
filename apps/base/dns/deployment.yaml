@@ -1,0 +1,89 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pihole
+  namespace: dns
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: pihole
+        image: pihole/pihole:latest
+        envFrom:
+        - configMapRef:
+            name: pihole-configmap
+        - secretRef:
+            name: pihole-secret
+        ports:
+        - containerPort: 53
+          protocol: UDP
+        - containerPort: 53
+          protocol: TCP
+        - containerPort: 80
+          protocol: TCP
+        resources:
+          limits:
+            memory: "300Mi"
+            cpu: "1000m"
+          requests:
+            memory: "100Mi"
+            cpu: "500m"
+        volumeMounts:
+        # - name: pihole-etc
+        #   mountPath: /etc/pihole
+        - name: pihole-adlists
+          mountPath: /etc/pihole/adlists.list
+          subPath: adlists.list
+      volumes:
+        # - name: pihole-etc
+        #   persistentVolumeClaim:
+        #     claimName: pihole-pvc
+        - name: pihole-adlists
+          configMap:
+            name: pihole-adlists-configmap
+
+# ---
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: unbound
+#   namespace: dns
+#   labels:
+#     app: unbound
+#     pod-security.kubernetes.io/enforce: privileged
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: unbound
+#   template:
+#     metadata:
+#       labels:
+#         app: unbound
+#     spec:
+#       containers:
+#       - name: unbound
+#         image: mvance/unbound-rpi:latest # Remove rpi if not ARM
+#         imagePullPolicy: IfNotPresent
+#         ports:
+#         - containerPort: 53
+#           protocol: TCP
+#         - containerPort: 53
+#           protocol: UDP
+#         resources:
+#           limits:
+#             memory: "300Mi"
+#             cpu: "500m"
+#           requests:
+#             memory: "50Mi"
+#             cpu: "250m"
+#         volumeMounts:
+#           - name: unbound-main-conf-volume
+#             mountPath: /opt/unbound/etc/unbound/unbound.conf
+#             subPath: unbound.conf
+#       volumes:
+#         - name: unbound-main-conf-volume
+#           configMap:
+#             name: unbound-configmap
