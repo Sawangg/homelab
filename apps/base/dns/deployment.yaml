@@ -79,11 +79,11 @@ spec:
     spec:
       containers:
       - name: unbound
-        image: crazymax/unbound:1.22.0
+        image: madnuttah/unbound:1.22.0-2
         ports:
-        - containerPort: 5053
+        - containerPort: 5353
           protocol: TCP
-        - containerPort: 5053
+        - containerPort: 5353
           protocol: UDP
         resources:
           limits:
@@ -92,11 +92,3 @@ spec:
           requests:
             memory: "50Mi"
             cpu: "250m"
-        # volumeMounts:
-        #   - name: unbound-main-conf-volume
-        #     mountPath: /opt/unbound/etc/unbound/unbound.conf
-        #     subPath: unbound.conf
-      # volumes:
-      #   - name: unbound-main-conf-volume
-      #     configMap:
-      #       name: unbound-configmap
