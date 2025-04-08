@@ -8,7 +8,6 @@ env:
         key: token
 sources:
   - gateway-httproute
-annotationFilter: "external-dns.alpha.kubernetes.io/exclude notin (true)"
 extraArgs:
   - --default-targets=82.64.164.79 # NOTE: Change this to your public ip address
-  # - --annotation-filter="external-dns.alpha.kubernetes.io/exclude notin (true)"
+  - --annotation-filter=external-dns.alpha.kubernetes.io/exclude notin (true)
