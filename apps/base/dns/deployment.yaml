@@ -33,11 +33,11 @@ spec:
           protocol: TCP
         resources:
           limits:
-            memory: "300Mi"
-            cpu: "2000m"
+            memory: "1Gi"
+            cpu: 1
           requests:
-            memory: "100Mi"
-            cpu: "1000m"
+            memory: "128Mi"
+            cpu: "100m"
         # securityContext:
         #   capabilities:
         #     add:
