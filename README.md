@@ -38,10 +38,6 @@ at home to host a bunch of useful apps.
     <td><a href="https://pi-hole.net/" title="Pi-hole" target="_blank"> <img src="https://avatars.githubusercontent.com/u/16827203" alt="pi-hole" width="40" height="40" /></a></td>
     <td>Custom DNS server with blocking capabilities to route internal traffic</td>
   </tr>
-  <tr>
-    <td><a href="https://docs.mend.io/renovate/latest/" title="Renovate" target="_blank"> <img src="https://avatars.githubusercontent.com/u/38656520" alt="renovate" width="35" height="35" /></a></td>
-    <td>Automatically inform of new updates for deployed apps in the cluster</td>
-  </tr>
 </table>
 
 ## 📦 Applications
@@ -58,6 +54,27 @@ at home to host a bunch of useful apps.
   <tr>
     <td><a href="https://git-scm.com/" title="Git" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/git/git-original.svg" alt="git" width="40" height="40" /></a></td>
     <td>Git server to host personal stuff likes notes etc.</td>
+  </tr>
+</table>
+
+## 🔭 Monitoring
+
+<table>
+  <tr>
+    <th>Apps</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><a href="https://grafana.com/" title="Grafana" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/grafana/grafana-original.svg" alt="graphana" width="40" height="40" /></a></td>
+    <td>Open-source analytics and interactive visualization web application</td>
+  </tr>
+  <tr>
+    <td><a href="https://prometheus.io/" title="Prometheus" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/prometheus/prometheus-original.svg" alt="prometheus" width="40" height="40" /></a></td>
+    <td>Monitoring system with a dimensional data model, flexible query language & more</td>
+  </tr>
+  <tr>
+    <td><a href="https://docs.mend.io/renovate/latest/" title="Renovate" target="_blank"> <img src="https://avatars.githubusercontent.com/u/38656520" alt="renovate" width="35" height="35" /></a></td>
+    <td>Automatically inform of new updates for deployed apps in the cluster</td>
   </tr>
 </table>
 
