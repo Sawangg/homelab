@@ -46,9 +46,20 @@ at home to host a bunch of useful apps.
 
 ## 📦 Applications
 
-- Atuin (_Shell history manager_)
-- Git (_Local git server to host personal stuff e.g. Obsidian notes_)
-- Immich (_Local photo storage & more_)
+<table>
+  <tr>
+    <th>Apps</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><a href="https://www.nlnetlabs.nl/projects/unbound/about/" title="Unbound" target="_blank"> <img src="https://netdata.cloud/img/unbound.png" alt="unbound" width="35" height="35" /></a></td>
+    <td>Recursive DNS server used with Pi-hole to provide more privacy</td>
+  </tr>
+  <tr>
+    <td><a href="https://git-scm.com/" title="Git" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/git/git-original.svg" alt="git" width="40" height="40" /></a></td>
+    <td>Git server to host personal stuff likes notes etc.</td>
+  </tr>
+</table>
 
 ## ☸️ Deploy the Kubernetes clusters
 
