@@ -87,3 +87,11 @@ spec:
           requests:
             memory: "50Mi"
             cpu: "250m"
+        volumeMounts:
+        - name: unbound-config-volume
+          mountPath: /etc/unbound/custom.conf.d
+          subPath: pihole.conf
+      volumes:
+      - name: unbound-config-volume
+        configMap:
+          name: unbound-configmap
