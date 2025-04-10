@@ -89,7 +89,7 @@ spec:
             cpu: "250m"
         volumeMounts:
         - name: unbound-config-volume
-          mountPath: /etc/unbound/custom.conf.d
+          mountPath: /etc/unbound/custom.conf.d/pihole.conf
           subPath: pihole.conf
       volumes:
       - name: unbound-config-volume
