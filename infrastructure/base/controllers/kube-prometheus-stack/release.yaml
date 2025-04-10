@@ -25,15 +25,3 @@ spec:
       - paths: ["/metadata/annotations/prometheus-operator-validated"]
         target:
           kind: PrometheusRule
-  values:
-    grafana:
-      enabled: false
-    prometheus:
-      prometheusSpec:
-        podMonitorNamespaceSelector:
-          matchLabels:
-            podmonitorscrape: "true"
-        podMonitorSelectorNilUsesHelmValues: false
-        probeSelectorNilUsesHelmValues: false
-        ruleSelectorNilUsesHelmValues: false
-        serviceMonitorSelectorNilUsesHelmValues: false
