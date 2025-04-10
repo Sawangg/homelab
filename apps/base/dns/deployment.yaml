@@ -46,15 +46,10 @@ spec:
         #       - CAP_CHOWN
         #       - CAP_SYS_TIME
         volumeMounts:
-        # - name: pihole-etc
-        #   mountPath: /etc/pihole
         - name: pihole-adlists
           mountPath: /etc/pihole/adlists.list
           subPath: adlists.list
       volumes:
-        # - name: pihole-etc
-        #   persistentVolumeClaim:
-        #     claimName: pihole-pvc
         - name: pihole-adlists
           configMap:
             name: pihole-adlists-configmap
@@ -79,11 +74,11 @@ spec:
     spec:
       containers:
       - name: unbound
-        image: madnuttah/unbound:1.22.0-2
+        image: klutchell/unbound:1.22.0
         ports:
-        - containerPort: 5353
+        - containerPort: 53
           protocol: TCP
-        - containerPort: 5353
+        - containerPort: 53
           protocol: UDP
         resources:
           limits:
