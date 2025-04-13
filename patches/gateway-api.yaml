@@ -1,0 +1,3 @@
+cluster:
+  extraManifests:
+    - https://github.com/kubernetes-sigs/gateway-api/releases/latest/download/experimental-install.yaml

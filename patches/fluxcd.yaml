@@ -1,0 +1,3 @@
+cluster:
+  extraManifests:
+    - https://github.com/fluxcd/flux2/releases/latest/download/install.yaml

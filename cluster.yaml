@@ -1,0 +1,24 @@
+---
+kind: Cluster
+name: homelab
+kubernetes:
+  version: 1.32.3
+talos:
+  version: v1.9.5
+features:
+  diskencryption: true
+patches:
+  - name: cni
+    file: patches/cni.yaml
+  - name: gateway-api
+    file: patches/gateway-api.yaml
+  - name: fluxcd
+    file: patches/fluxcd.yaml
+---
+kind: ControlPlane
+machineClass:
+  name: homelab-controlplane
+  size: 1
+patches:
+  - name: cilium
+    file: patches/cilium.yaml
