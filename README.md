@@ -12,7 +12,7 @@ at home to host a bunch of useful apps.
   </tr>
   <tr>
     <td><a href="https://talos.dev/" title="Talos" target="_blank"> <img src="https://avatars.githubusercontent.com/u/13804887" alt="talos" width="35" height="35" /></a></td>
-    <td>Immutable Linux distro for Kubernetes, deployed with <code>Omni</code></td>
+    <td>Immutable Linux distro for Kubernetes, allowing to deploy the cluster with <code>Omni</code></td>
   </tr>
   <tr>
     <td><a href="https://cilium.io/" title="Cilium" target="_blank"> <img src="https://avatars.githubusercontent.com/u/21054566" alt="cilium" width="40" height="40" /></a></td>
@@ -24,7 +24,7 @@ at home to host a bunch of useful apps.
   </tr>
   <tr>
     <td><a href="https://external-secrets.io/" title="External Secrets Operator" target="_blank"> <img src="https://avatars.githubusercontent.com/u/68335991" alt="eso" width="35" height="35" /></a></td>
-    <td>Manage secrets remotely & securely from a list of providers</td>
+    <td>Manage secrets remotely & securely from a large list of providers</td>
   </tr>
   <tr>
     <td><a href="https://cert-manager.io/" title="Cert-Manager" target="_blank"> <img src="https://avatars.githubusercontent.com/u/39950598" alt="cert-manager" width="40" height="40" /></a></td>
@@ -84,14 +84,34 @@ I'm using [Sidero Omni](https://github.com/siderolabs/omni) to manage and deploy
 
 You'll need the following:
 
-- A [GitHub PAT](https://github.com/settings/personal-access-tokens) to be used by `Flux`, with Read-Write permissions
-for Admnistration & Contents
-- Any secret provider supported by [External Secrets Operator](https://external-secrets.io/), this repository uses `GitLab`
-- An API token of your a provider that will make DNS challenges to create certificates. This repository uses a `Cloudflare` token with the permissions: Zone - DNS - Edit, Zone - Zone - Read & Include - All Zones
+- A static public IP address with a router able to forward ports
+- A domain name with a DNS provider usable with [ExternalDNS](https://kubernetes-sigs.github.io/external-dns/latest/#the-latest-release)
+- An API token of the DNS provider that will allow challenges to create certificates. This repository uses a `Cloudflare` token with the permissions: Zone - DNS - Edit, Zone - Zone - Read & Include - All Zones
 - Another API token of the same provider to manage DNS records. Using `Cloudflare`, the token should have the same
-permissions as above.
+permissions as above
+- A [GitHub PAT](https://github.com/settings/personal-access-tokens) to be used by `FluxCD`, with Read-Write permissions
+for Admnistration & Contents
+- Any secret provider supported by [External Secrets Operator](https://external-secrets.io/). This repository uses `GitLab`
 
 ### 🔑 Secrets
 
-Add the following secrets to your secret provider of choice: `dns_provider_challenge_token`,
-`dns_provider_management_token` & `pihole_password`
+Here is the following list of secrets you need to add in your external secrets provider of choice
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>dns_provider_challenge_token</code></td>
+    <td>API token of your DNS management provider of your domain, used to generate the x.509 certificates</td>
+  </tr>
+  <tr>
+    <td><code>dns_provider_management_token</code></td>
+    <td>API token of your DNS management provider of your domain, used to manage your DNS records</td>
+  </tr>
+  <tr>
+    <td><code>pihole_password</code></td>
+    <td>Password for the web interface of Pi-hole</td>
+  </tr>
+</table>
