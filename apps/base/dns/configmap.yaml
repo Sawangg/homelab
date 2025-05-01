@@ -11,7 +11,8 @@ data:
   FTLCONF_dns_dnssec: "true"
   FTLCONF_webserver_interface_theme: default-dark
   # NOTE: Change the ip and/or domain to match the configuration of the internal gateway
-  FTLCONF_misc_dnsmasq_lines: address=/.internal.leomercier.dev/192.168.1.11
+  FTLCONF_misc_dnsmasq_lines:
+    - address=/.internal.leomercier.dev/192.168.1.11
 
 ---
 apiVersion: v1
