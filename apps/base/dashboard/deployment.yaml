@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: glance-deploy
+  name: glance
   namespace: dashboard
   labels:
     app: glance
