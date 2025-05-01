@@ -6,6 +6,8 @@ metadata:
   namespace: dashboard
 data:
   glance.yml: |
+    branding:
+      hide-footer: true
     theme:
       background-color: 240 21 15
       contrast-multiplier: 1.2
@@ -48,6 +50,17 @@ data:
                   - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
                   - UCsBjURrPoezykLs9EqgamOA # Fireship
                   - UCHnyfMqiRRG1u-2MsSQLbXA # Veritasium
+
+              - type: monitor
+                cache: 1m
+                title: Services
+                sites:
+                  - title: PiHole
+                    url: https://pihole.internal.leomercier.dev
+                    icon: di:pi-hole
+                  - title: Grafana
+                    url: https://grafana.internal.leomercier.dev
+                    icon: di:grafana
 
           - size: small
             widgets:
