@@ -52,6 +52,10 @@ at home to host a bunch of useful apps.
     <td>Recursive DNS server used with Pi-hole to provide more privacy</td>
   </tr>
   <tr>
+    <td><a href="https://github.com/glanceapp/glance" title="Glance" target="_blank"> <img src="https://avatars.githubusercontent.com/u/159397742" alt="glance" width="40" height="40" /></a></td>
+    <td>Dashboard with a bunch of features that I use as browser starting page</td>
+  </tr>
+  <tr>
     <td><a href="https://git-scm.com/" title="Git" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/git/git-original.svg" alt="git" width="40" height="40" /></a></td>
     <td>Git server to host personal stuff likes notes etc.</td>
   </tr>
@@ -95,7 +99,8 @@ for Admnistration & Contents
 
 ### 🔑 Secrets
 
-Here is the following list of secrets you need to add in your external secrets provider of choice
+Here is the following list of secrets you need to add in your external secrets provider of choice before starting the
+cluster:
 
 <table>
   <tr>
