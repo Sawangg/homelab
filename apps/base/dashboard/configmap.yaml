@@ -56,10 +56,14 @@ data:
                 title: Services
                 sites:
                   - title: PiHole
-                    url: https://pihole.internal.leomercier.dev
+                    url: https://pihole.internal.leomercier.dev/admin
+                    check-url: http://pihole-svc.dns.svc.cluster.local
+                    allow-insecure: true
                     icon: di:pi-hole
                   - title: Grafana
                     url: https://grafana.internal.leomercier.dev
+                    check-url: http://kube-prometheus-stack-grafana.monitoring.svc.cluster.local
+                    allow-insecure: true
                     icon: di:grafana
 
           - size: small
