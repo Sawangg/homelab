@@ -57,7 +57,9 @@ data:
                 sites:
                   - title: PiHole
                     url: https://pihole.internal.leomercier.dev/admin
-                    check-url: http://pihole-svc.dns.svc.cluster.local/admin
+                    check-url: http://pihole-svc.dns.svc.cluster.local
+                    alt-status-codes:
+                      - 403
                     allow-insecure: true
                     icon: di:pi-hole
                   - title: Grafana
