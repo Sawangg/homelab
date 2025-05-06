@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: docker.io/nginx/1.28.0-alpine-slim
+        image: docker.io/nginx:1.28.0-alpine-slim
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
