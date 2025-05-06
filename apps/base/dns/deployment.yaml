@@ -18,7 +18,8 @@ spec:
     spec:
       containers:
       - name: pihole
-        image: pihole/pihole:latest
+        image: docker.io/pihole/pihole:2025.04.0
+        imagePullPolicy: IfNotPresent
         envFrom:
         - configMapRef:
             name: pihole-configmap
@@ -76,7 +77,8 @@ spec:
     spec:
       containers:
       - name: unbound
-        image: klutchell/unbound:1.22.0
+        image: docker.io/klutchell/unbound:1.22.0
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 53
           protocol: TCP

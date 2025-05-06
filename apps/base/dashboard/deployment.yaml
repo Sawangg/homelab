@@ -18,7 +18,8 @@ spec:
     spec:
       containers:
       - name: glance
-        image: glanceapp/glance:latest
+        image: docker.io/glanceapp/glance:0.7.12
+        imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8080
         volumeMounts:
