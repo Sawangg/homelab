@@ -119,4 +119,8 @@ cluster:
     <td><code>pihole_password</code></td>
     <td>Password for the web interface of Pi-hole</td>
   </tr>
+  <tr>
+    <td><code>renovate_token</code></td>
+    <td>The Git token for the Renovate account</td>
+  </tr>
 </table>

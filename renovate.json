@@ -1,0 +1,50 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices"
+  ],
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "Renovate Dashboard",
+  "packageRules": [
+    {
+      "matchPaths": [
+        "apps/staging/**",
+        "infrastructure/staging/**",
+        "clusters/staging/**"
+      ],
+      "automerge": true,
+      "labels": [
+        "dependencies",
+        "cluster: staging"
+      ]
+    },
+    {
+      "matchPaths": [
+        "apps/production/**",
+        "infrastructure/production/**",
+        "clusters/production/**"
+      ],
+      "automerge": false,
+      "labels": [
+        "dependencies",
+        "cluster: prod"
+      ]
+    }
+  ],
+  "kubernetes": {
+    "managerFilePatterns": [
+      "^apps/.+\\.ya?ml$",
+      "^infrastructure/.+\\.ya?ml$"
+    ],
+    "ignorePaths": [
+      "clusters/**",
+      "infrastructure/**/controllers/**/release\\.ya?ml$"
+    ]
+  },
+  "flux": {
+    "managerFilePatterns": [
+      "clusters/.+\\.ya?ml$",
+      "infrastructure/.+/controllers/.+/release\\.ya?ml$"
+    ]
+  }
+}
