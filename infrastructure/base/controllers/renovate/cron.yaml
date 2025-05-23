@@ -15,10 +15,6 @@ spec:
             - image: docker.io/renovate/renovate:40.5.0
               name: renovate-bot
               env:
-                - name: RENOVATE_PLATFORM
-                  value: github
-                - name: RENOVATE_AUTODISCOVER
-                  value: "false"
                 - name: RENOVATE_CONFIG_FILE
                   value: /opt/renovate/config.json
                 - name: LOG_LEVEL

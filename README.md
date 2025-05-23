@@ -78,7 +78,7 @@ at home to host a bunch of useful apps.
   </tr>
   <tr>
     <td><a href="https://docs.mend.io/renovate/latest/" title="Renovate" target="_blank"> <img src="https://avatars.githubusercontent.com/u/38656520" alt="renovate" width="35" height="35" /></a></td>
-    <td>Automatically inform of new updates for deployed apps in the cluster</td>
+    <td>Automatically inform and updates deployed apps in the clusters</td>
   </tr>
 </table>
 

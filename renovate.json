@@ -3,8 +3,6 @@
   "extends": [
     "config:best-practices"
   ],
-  "dependencyDashboard": true,
-  "dependencyDashboardTitle": "Renovate Dashboard",
   "packageRules": [
     {
       "matchPaths": [

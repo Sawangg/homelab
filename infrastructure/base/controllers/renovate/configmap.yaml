@@ -5,9 +5,12 @@ metadata:
   name: renovate-cm
   namespace: renovate
 data:
-  # NOTE: Change the repositories name
+  # NOTE: Change the config to better match your use case
   config.json: |-
     {
+      "platform": "github",
       "repositories": ["Sawangg/homelab"],
-      "onboarding": false
+      "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+      "onboarding": false,
+      "dryRun": full
     }
