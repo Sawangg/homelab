@@ -31,18 +31,18 @@
   ],
   "kubernetes": {
     "managerFilePatterns": [
-      "apps/.+\\.ya?ml$",
-      "infrastructure/.+\\.ya?ml$"
+      "/apps/.+\\.ya?ml$/",
+      "/infrastructure/.+\\.ya?ml$/"
     ],
     "ignorePaths": [
-      "clusters/**",
-      "infrastructure/**/controllers/**/release\\.ya?ml$"
+      "/clusters/.*/",
+      "/infrastructure/.*/controllers/.*/release\\.ya?ml$/"
     ]
   },
   "flux": {
     "managerFilePatterns": [
-      "clusters/.+\\.ya?ml$",
-      "infrastructure/.+/controllers/.+/release\\.ya?ml$"
+      "/clusters/.+\\.ya?ml$/",
+      "/infrastructure/.+/controllers/.+/release\\.ya?ml$/"
     ]
   }
 }
