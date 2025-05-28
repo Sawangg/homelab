@@ -35,14 +35,15 @@
       "/infrastructure/.+\\.ya?ml$/"
     ],
     "ignorePaths": [
-      "/clusters/.*/",
+      "/infrastructure/.*/controllers/.*/repository\\.ya?ml$/",
       "/infrastructure/.*/controllers/.*/release\\.ya?ml$/"
     ]
   },
   "flux": {
     "managerFilePatterns": [
-      "/clusters/.+\\.ya?ml$/",
-      "/infrastructure/.+/controllers/.+/release\\.ya?ml$/"
+      "/(?:^|/)gotk-components\\.ya?ml$/",
+      "/(?:^|/)repository\\.ya?ml$/",
+      "/(?:^|/)release\\.ya?ml$/"
     ]
   }
 }
