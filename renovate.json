@@ -31,8 +31,8 @@
   ],
   "kubernetes": {
     "managerFilePatterns": [
-      "^apps/.+\\.ya?ml$",
-      "^infrastructure/.+\\.ya?ml$"
+      "apps/.+\\.ya?ml$",
+      "infrastructure/.+\\.ya?ml$"
     ],
     "ignorePaths": [
       "clusters/**",
