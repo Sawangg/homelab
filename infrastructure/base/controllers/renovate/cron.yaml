@@ -1,3 +1,4 @@
+---
 apiVersion: batch/v1
 kind: CronJob
 metadata:
@@ -24,11 +25,9 @@ spec:
                     configMapKeyRef:
                       name: github-app-config
                       key: GITHUB_APP_INSTALLATION_ID
-                - name: GITHUB_APP_PRIVATE_KEY
-                  valueFrom:
-                    secretKeyRef:
-                      name: github-app-secrets
-                      key: private-key
+              envFrom:
+                - secretRef:
+                    name: renovate-env
               command: ["/bin/sh"]
               args:
                 - -c
