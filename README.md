@@ -12,7 +12,7 @@ at home to host a bunch of useful apps.
   </tr>
   <tr>
     <td><a href="https://talos.dev/" title="Talos" target="_blank"> <img src="https://avatars.githubusercontent.com/u/13804887" alt="talos" width="35" height="35" /></a></td>
-    <td>Immutable Linux distro for Kubernetes, allowing to deploy the cluster with <code>Omni</code></td>
+    <td>Immutable Linux distro for Kubernetes, allowing to deploy clusters with <code>Omni</code></td>
   </tr>
   <tr>
     <td><a href="https://cilium.io/" title="Cilium" target="_blank"> <img src="https://avatars.githubusercontent.com/u/21054566" alt="cilium" width="40" height="40" /></a></td>
