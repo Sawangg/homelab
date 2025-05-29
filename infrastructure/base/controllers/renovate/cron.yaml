@@ -1,4 +1,3 @@
----
 apiVersion: batch/v1
 kind: CronJob
 metadata:
@@ -11,22 +10,57 @@ spec:
     spec:
       template:
         spec:
+          initContainers:
+            - name: token-generator
+              image: ghcr.io/mshekow/github-app-installation-token:2025.05.28
+              env:
+                - name: GITHUB_APP_ID
+                  valueFrom:
+                    configMapKeyRef:
+                      name: github-app-config
+                      key: GITHUB_APP_ID
+                - name: GITHUB_APP_INSTALLATION_ID
+                  valueFrom:
+                    configMapKeyRef:
+                      name: github-app-config
+                      key: GITHUB_APP_INSTALLATION_ID
+                - name: GITHUB_APP_PRIVATE_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: github-app-secrets
+                      key: private-key
+              command: ["/bin/sh"]
+              args:
+                - -c
+                - |
+                  TOKEN=$(generate-token)
+                  echo "${TOKEN}" > /shared/token
+              volumeMounts:
+                - name: shared-data
+                  mountPath: /shared
           containers:
-            - image: docker.io/renovate/renovate:40.5.0
-              name: renovate-bot
+            - name: renovate-bot
+              image: docker.io/renovate/renovate:40.5.0
+              command: ["/bin/sh"]
+              args:
+                - -c
+                - |
+                  export RENOVATE_TOKEN="$(cat /shared/token)"
+                  exec renovate
               env:
                 - name: RENOVATE_CONFIG_FILE
                   value: /opt/renovate/config.json
                 - name: LOG_LEVEL
                   value: debug
-              envFrom:
-                - secretRef:
-                    name: renovate-env
               volumeMounts:
                 - name: config-volume
                   mountPath: /opt/renovate/
+                - name: shared-data
+                  mountPath: /shared
           restartPolicy: Never
           volumes:
             - name: config-volume
               configMap:
                 name: renovate-cm
+            - name: shared-data
+              emptyDir: {}
