@@ -11,16 +11,5 @@ data:
       "platform": "github",
       "repositories": ["Sawangg/homelab"],
       "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
-      "onboarding": false,
-      "dryRun": "full"
+      "onboarding": false
     }
-
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: github-app-config
-  namespace: renovate
-data:
-  GITHUB_APP_ID: "1339166"
-  GITHUB_APP_INSTALLATION_ID: "68862171"
