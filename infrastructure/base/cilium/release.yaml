@@ -15,7 +15,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: cilium
-        namespace: kube-system
+        namespace: flux-system
   values:
     ipam:
       mode: kubernetes
