@@ -35,8 +35,8 @@
       "/infrastructure/.+\\.ya?ml$/"
     ],
     "ignorePaths": [
-      "/infrastructure/.*/controllers/.*/repository\\.ya?ml$/",
-      "/infrastructure/.*/controllers/.*/release\\.ya?ml$/"
+      "/infrastructure/.*/repository\\.ya?ml$/",
+      "/infrastructure/.*/release\\.ya?ml$/"
     ]
   },
   "flux": {
