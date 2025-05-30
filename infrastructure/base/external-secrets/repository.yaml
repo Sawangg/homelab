@@ -7,3 +7,15 @@ metadata:
 spec:
   interval: 10m
   url: https://charts.external-secrets.io
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: external-secrets
+  namespace: external-secrets
+spec:
+  interval: 10m
+  ref:
+    tag: v0.15.1
+  url: https://github.com/external-secrets/external-secrets
