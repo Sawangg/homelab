@@ -17,4 +17,4 @@ spec:
         name: external-secrets
         namespace: external-secrets
   values:
-    installCRDs: false
+    installCRDs: true

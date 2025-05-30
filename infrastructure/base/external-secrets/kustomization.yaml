@@ -4,6 +4,5 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - repository.yaml
-  - deployment-crds.yaml
   - release.yaml
   - cluster-secret-store.yaml
