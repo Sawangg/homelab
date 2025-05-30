@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unbound
+  namespace: unbound
+  labels:
+    app: unbound
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: unbound
+  template:
+    metadata:
+      labels:
+        app: unbound
+    spec:
+      containers:
+      - name: unbound
+        image: docker.io/klutchell/unbound:1.22.0@sha256:bbd1895ec29743901ee110206d62ad39a599eeac50f0c32fdc07ca085ae4e794
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 53
+          protocol: TCP
+        - containerPort: 53
+          protocol: UDP
+        resources:
+          limits:
+            memory: "300Mi"
+            cpu: "500m"
+          requests:
+            memory: "50Mi"
+            cpu: "250m"
+        volumeMounts:
+        - name: unbound-config-volume
+          mountPath: /etc/unbound/custom.conf.d/pihole.conf
+          subPath: pihole.conf
+      volumes:
+      - name: unbound-config-volume
+        configMap:
+          name: unbound-configmap

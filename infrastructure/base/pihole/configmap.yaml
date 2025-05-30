@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pihole-configmap
+  namespace: pihole
+data:
+  TZ: Europe/Paris
+  FTLCONF_dns_listeningMode: all
+  FTLCONF_dns_upstreams: unbound-svc.unbound.svc.cluster.local
+  FTLCONF_dns_dnssec: "true"
+  FTLCONF_webserver_interface_theme: default-dark
+  # NOTE: Change the ip and/or domain to match the configuration of the internal gateway
+  FTLCONF_misc_dnsmasq_lines: "address=/.internal.leomercier.dev/192.168.1.11"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pihole-adlists-configmap
+  namespace: pihole
+data:
+  adlists.list: |
+    https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/ultimate.txt
+    https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt
+    https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-aggressive.txt
+    https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/doh-vpn-proxy-bypass.txt
+    https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt
+    https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/nosafesearch.txt
+    https://nsfw.oisd.nl

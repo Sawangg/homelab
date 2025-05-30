@@ -1,0 +1,58 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pihole
+  namespace: pihole
+  labels:
+    app: pihole
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pihole
+  template:
+    metadata:
+      labels:
+        app: pihole
+    spec:
+      containers:
+      - name: pihole
+        image: docker.io/pihole/pihole:2025.04.0@sha256:c2215c570976ebc23ab6688f556a80133d4236dae0bffee678129da4396fbd61
+        imagePullPolicy: IfNotPresent
+        envFrom:
+        - configMapRef:
+            name: pihole-configmap
+        - secretRef:
+            name: pihole-secret
+        ports:
+        - containerPort: 53
+          protocol: UDP
+        - containerPort: 53
+          protocol: TCP
+        - containerPort: 80
+          protocol: TCP
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: 2
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+        securityContext:
+          capabilities:
+            add:
+              - CAP_NET_BIND_SERVICE
+              - CAP_SYS_NICE
+              - CAP_CHOWN
+              - CAP_SYS_TIME
+            drop:
+              - ALL
+        volumeMounts:
+        - name: pihole-adlists
+          mountPath: /etc/pihole/adlists.list
+          subPath: adlists.list
+      volumes:
+        - name: pihole-adlists
+          configMap:
+            name: pihole-adlists-configmap
