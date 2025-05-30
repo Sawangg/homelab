@@ -6,5 +6,4 @@ resources:
 
 images:
   - name: docker.io/klutchell/unbound
-    newTag: "1.22.0"
-    digest: sha256:bbd1895ec29743901ee110206d62ad39a599eeac50f0c32fdc07ca085ae4e794
+    newTag: "1.22.0@sha256:bbd1895ec29743901ee110206d62ad39a599eeac50f0c32fdc07ca085ae4e794"
