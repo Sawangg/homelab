@@ -45,5 +45,17 @@
       "/(?:^|/)repository\\.ya?ml$/",
       "/(?:^|/)release\\.ya?ml$/"
     ]
-  }
+  },
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "(^|/)kustomization\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "value:\\s*(?<depName>[^\"'\\s]+):(?<currentValue>[^\"'\\s@]+)"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
+    }
+  ]
 }
