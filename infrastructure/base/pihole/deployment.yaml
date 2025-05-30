@@ -46,8 +46,6 @@ spec:
               - CAP_SYS_NICE
               - CAP_CHOWN
               - CAP_SYS_TIME
-            drop:
-              - ALL
         volumeMounts:
         - name: pihole-adlists
           mountPath: /etc/pihole/adlists.list
