@@ -3,6 +3,7 @@
   "extends": [
     "config:best-practices"
   ],
+  "labels": ["dependencies"],
   "packageRules": [
     {
       "matchFileNames": [
@@ -11,10 +12,7 @@
         "clusters/staging/**"
       ],
       "automerge": true,
-      "labels": [
-        "dependencies",
-        "cluster: staging"
-      ]
+      "addLabels": ["cluster: staging"]
     },
     {
       "matchFileNames": [
@@ -23,10 +21,7 @@
         "clusters/production/**"
       ],
       "automerge": false,
-      "labels": [
-        "dependencies",
-        "cluster: prod"
-      ]
+      "labels": ["cluster: prod"]
     }
   ],
   "flux": {
