@@ -11,6 +11,5 @@ data:
       "platform": "github",
       "repositories": ["Sawangg/homelab"],
       "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
-      "onboarding": false,
-      "dryRun": "full"
+      "onboarding": false
     }
