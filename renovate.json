@@ -21,7 +21,7 @@
         "clusters/production/**"
       ],
       "automerge": false,
-      "labels": ["cluster: prod"]
+      "addLabels": ["cluster: prod"]
     }
   ],
   "flux": {
