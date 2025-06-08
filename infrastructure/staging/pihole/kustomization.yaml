@@ -3,3 +3,12 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base/pihole/
+
+patches:
+  - target:
+      kind: Deployment
+      name: pihole
+    patch: |-
+      - op: add
+        path: /spec/template/spec/containers/0/image
+        value: docker.io/pihole/pihole:2025.04.0@sha256:c2215c570976ebc23ab6688f556a80133d4236dae0bffee678129da4396fbd61
