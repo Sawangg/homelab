@@ -1,0 +1,18 @@
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: home-assistant-https-route
+  namespace: home-assistant
+  annotations:
+    external-dns.alpha.kubernetes.io/exclude: "true"
+spec:
+  parentRefs:
+    - name: internal-https-gateway
+      namespace: default
+  hostnames:
+    - home-assistant.internal.leomercier.dev
+  rules:
+    - backendRefs:
+        - name: home-assistant-svc
+          port: 8123

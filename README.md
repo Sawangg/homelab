@@ -59,6 +59,10 @@ at home to host a bunch of useful apps.
     <td><a href="https://git-scm.com/" title="Git" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/git/git-original.svg" alt="git" width="40" height="40" /></a></td>
     <td>Git server to host personal stuff likes notes etc.</td>
   </tr>
+  <tr>
+    <td><a href="https://www.home-assistant.io/" title="Home Assistant" target="_blank"> <img src="https://avatars.githubusercontent.com/u/13844975" alt="home-assistant" width="35" height="35" /></a></td>
+    <td>Open source home automation that puts local control and privacy first</td>
+  </tr>
 </table>
 
 ## 🔭 Monitoring
