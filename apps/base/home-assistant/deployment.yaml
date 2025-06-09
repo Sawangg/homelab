@@ -25,6 +25,10 @@ spec:
           env:
             - name: TZ
               value: "Europe/Paris"
+          volumeMounts:
+            - name: home-assistant-config
+              mountPath: /config/configuration.yaml
+              subPath: configuration.yaml
           resources:
             requests:
               memory: "512Mi"
@@ -46,3 +50,7 @@ spec:
             initialDelaySeconds: 30
             periodSeconds: 10
             timeoutSeconds: 5
+      volumes:
+        - name: home-assistant-config
+          configMap:
+            name: home-assistant-cm
