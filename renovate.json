@@ -11,6 +11,7 @@
         "infrastructure/staging/**",
         "clusters/staging/**"
       ],
+      "groupName": "staging",
       "automerge": true,
       "addLabels": ["cluster: staging"]
     },
@@ -20,6 +21,7 @@
         "infrastructure/production/**",
         "clusters/production/**"
       ],
+      "groupName": "production",
       "automerge": false,
       "addLabels": ["cluster: prod"]
     }
