@@ -67,6 +67,21 @@ data:
                     check-url: http://kube-prometheus-stack-grafana.monitoring.svc.cluster.local
                     allow-insecure: true
                     icon: di:grafana
+                  - title: Prowlarr
+                    url: https://prowlarr.internal.leomercier.dev
+                    check-url: http://prowlarr-svc.prowlarr.svc.cluster.local
+                    allow-insecure: true
+                    icon: di:prowlarr
+                  - title: qBittorent
+                    url: https://qbittorrent.internal.leomercier.dev/
+                    check-url: http://qbittorent-svc.qbittorent.svc.cluster.local
+                    allow-insecure: true
+                    icon: di:qbittorent
+                  - title: Home Assistant
+                    url: https://home-assistant.internal.leomercier.dev/
+                    check-url: http://home-assistant-svc.home-assistant.svc.cluster.local
+                    allow-insecure: true
+                    icon: di:home-assistant
 
           - size: small
             widgets:
