@@ -1,114 +1,113 @@
-glance.yml: |
-  branding:
-    hide-footer: true
-  theme:
-    background-color: 240 21 15
-    contrast-multiplier: 1.2
-    primary-color: 217 92 83
-    positive-color: 115 54 76
-    negative-color: 347 70 65
-  pages:
-    - name: Home
-      columns:
-        - size: small
-          widgets:
-            - type: calendar
-              first-day-of-week: monday
+branding:
+  hide-footer: true
+theme:
+  background-color: 240 21 15
+  contrast-multiplier: 1.2
+  primary-color: 217 92 83
+  positive-color: 115 54 76
+  negative-color: 347 70 65
+pages:
+  - name: Home
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+            first-day-of-week: monday
 
-            - type: rss
-              limit: 10
-              collapse-after: 3
-              cache: 12h
-              feeds:
-                - url: https://selfh.st/rss/
-                  title: selfh.st
-                  limit: 4
-                - url: https://ciechanow.ski/atom.xml
-                - url: https://www.joshwcomeau.com/rss.xml
-                  title: Josh Comeau
-                - url: https://samwho.dev/rss.xml
-                - url: https://ishadeed.com/feed.xml
-                  title: Ahmad Shadeed
+          - type: rss
+            limit: 10
+            collapse-after: 3
+            cache: 12h
+            feeds:
+              - url: https://selfh.st/rss/
+                title: selfh.st
+                limit: 4
+              - url: https://ciechanow.ski/atom.xml
+              - url: https://www.joshwcomeau.com/rss.xml
+                title: Josh Comeau
+              - url: https://samwho.dev/rss.xml
+              - url: https://ishadeed.com/feed.xml
+                title: Ahmad Shadeed
 
-        - size: full
-          widgets:
-            - type: group
-              widgets:
-                - type: hacker-news
-                - type: lobsters
+      - size: full
+        widgets:
+          - type: group
+            widgets:
+              - type: hacker-news
+              - type: lobsters
 
-            - type: videos
-              channels:
-                - UCUyeluBRhGPCW4rPe_UvBZQ # Primeagen
-                - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
-                - UCsBjURrPoezykLs9EqgamOA # Fireship
-                - UCHnyfMqiRRG1u-2MsSQLbXA # Veritasium
+          - type: videos
+            channels:
+              - UCUyeluBRhGPCW4rPe_UvBZQ # Primeagen
+              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+              - UCsBjURrPoezykLs9EqgamOA # Fireship
+              - UCHnyfMqiRRG1u-2MsSQLbXA # Veritasium
 
-            - type: monitor
-              cache: 1m
-              title: Services
-              sites:
-                - title: PiHole
-                  url: https://pihole.internal.leomercier.dev/admin
-                  check-url: http://pihole-svc.pihole.svc.cluster.local
-                  alt-status-codes:
-                    - 403
-                  allow-insecure: true
-                  icon: di:pi-hole
-                - title: Grafana
-                  url: https://grafana.internal.leomercier.dev
-                  check-url: http://kube-prometheus-stack-grafana.monitoring.svc.cluster.local
-                  allow-insecure: true
-                  icon: di:grafana
-                - title: Prowlarr
-                  url: https://prowlarr.internal.leomercier.dev
-                  check-url: http://prowlarr-svc.prowlarr.svc.cluster.local
-                  allow-insecure: true
-                  icon: di:prowlarr
-                - title: qBittorent
-                  url: https://qbittorrent.internal.leomercier.dev/
-                  check-url: http://qbittorrent-svc.qbittorrent.svc.cluster.local
-                  allow-insecure: true
-                  icon: di:qbittorrent
-                - title: Home Assistant
-                  url: https://home-assistant.internal.leomercier.dev/
-                  check-url: http://home-assistant-svc.home-assistant.svc.cluster.local
-                  allow-insecure: true
-                  icon: di:home-assistant
+          - type: monitor
+            cache: 1m
+            title: Services
+            sites:
+              - title: PiHole
+                url: https://pihole.internal.leomercier.dev/admin
+                check-url: http://pihole-svc.pihole.svc.cluster.local
+                alt-status-codes:
+                  - 403
+                allow-insecure: true
+                icon: di:pi-hole
+              - title: Grafana
+                url: https://grafana.internal.leomercier.dev
+                check-url: http://kube-prometheus-stack-grafana.monitoring.svc.cluster.local
+                allow-insecure: true
+                icon: di:grafana
+              - title: Prowlarr
+                url: https://prowlarr.internal.leomercier.dev
+                check-url: http://prowlarr-svc.prowlarr.svc.cluster.local
+                allow-insecure: true
+                icon: di:prowlarr
+              - title: qBittorent
+                url: https://qbittorrent.internal.leomercier.dev/
+                check-url: http://qbittorrent-svc.qbittorrent.svc.cluster.local
+                allow-insecure: true
+                icon: di:qbittorrent
+              - title: Home Assistant
+                url: https://home-assistant.internal.leomercier.dev/
+                check-url: http://home-assistant-svc.home-assistant.svc.cluster.local
+                allow-insecure: true
+                icon: di:home-assistant
 
-        - size: small
-          widgets:
-            - type: weather
-              location: Paris, France
-              units: metric
-              hour-format: 24h
-              hide-location: true
+      - size: small
+        widgets:
+          - type: weather
+            location: Paris, France
+            units: metric
+            hour-format: 24h
+            hide-location: true
 
-            - type: markets
-              markets:
-                - symbol: SPY
-                  name: S&P 500
-                - symbol: NVDA
-                  name: NVIDIA
-                - symbol: AAPL
-                  name: Apple
-                - symbol: MSFT
-                  name: Microsoft
+          - type: markets
+            markets:
+              - symbol: SPY
+                name: S&P 500
+              - symbol: NVDA
+                name: NVIDIA
+              - symbol: AAPL
+                name: Apple
+              - symbol: MSFT
+                name: Microsoft
 
-            - type: releases
-              cache: 1d
-              # Without authentication the Github API allows for up to 60 requests per hour. You can create a
-              # read-only token from your Github account settings and use it here to increase the limit.
-              # token: ...
-              repositories:
-                - neovim/neovim
-                - withastro/astro
-                - hyprwm/Hyprland
-                - zellij-org/zellij
+          - type: releases
+            cache: 1d
+            # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+            # read-only token from your Github account settings and use it here to increase the limit.
+            # token: ...
+            repositories:
+              - neovim/neovim
+              - withastro/astro
+              - hyprwm/Hyprland
+              - zellij-org/zellij
 
-    # Add more pages here:
-    # - name: Your page name
-    #   columns:
-    #     - size: small
-    #       widgets:
-    #         # Add widgets here
+  # Add more pages here:
+  # - name: Your page name
+  #   columns:
+  #     - size: small
+  #       widgets:
+  #         # Add widgets here
