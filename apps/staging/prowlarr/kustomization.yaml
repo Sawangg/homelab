@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base/prowlarr/
+
+patches:
+  - target:
+      kind: Deployment
+      name: prowlarr
+    patch: |-
+      - op: add
+        path: /spec/template/spec/containers/0/image
+        value: ghcr.io/linuxserver/prowlarr:1.37.0@sha256:68d16fa1a692ec26c4340a23f50b5980899c5630ce881fd0015dac849cbb9b53

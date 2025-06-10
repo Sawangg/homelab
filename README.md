@@ -63,6 +63,10 @@ at home to host a bunch of useful apps.
     <td><a href="https://www.home-assistant.io/" title="Home Assistant" target="_blank"> <img src="https://avatars.githubusercontent.com/u/13844975" alt="home-assistant" width="35" height="35" /></a></td>
     <td>Open source home automation that puts local control and privacy first</td>
   </tr>
+  <tr>
+    <td><a href="https://prowlarr.com/" title="Prowlarr" target="_blank"> <img src="https://avatars.githubusercontent.com/u/73049443" alt="prowlarr" width="35" height="35" /></a></td>
+    <td>Prowlarr is an indexer manager/proxy that supports management of both torrent trackers and usenet indexers</td>
+  </tr>
 </table>
 
 ## 🔭 Monitoring
