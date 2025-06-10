@@ -26,9 +26,11 @@ spec:
   selector:
     app: qbittorrent
   ports:
-    - protocol: TCP
+    - name: qbittorrent-tcp
+      protocol: TCP
       port: 6881
       targetPort: 6881
-    - protocol: UDP
+    - name: qbittorrent-udp
+      protocol: UDP
       port: 6881
       targetPort: 6881
