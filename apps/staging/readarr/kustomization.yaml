@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base/readarr/
+
+patches:
+  - target:
+      kind: Deployment
+      name: readarr
+    patch: |-
+      - op: add
+        path: /spec/template/spec/containers/0/image
+        value: ghcr.io/linuxserver/readarr:0.4.17-develop@sha256:d71c575745ab4579ae0dbb4f91244cf9a74d7085d28a927218146466f8e6418c

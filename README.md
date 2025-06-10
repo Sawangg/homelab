@@ -71,6 +71,10 @@ at home to host a bunch of useful apps.
     <td><a href="https://www.qbittorrent.org/" title="qBittorrent" target="_blank"> <img src="https://avatars.githubusercontent.com/u/2131270" alt="qbittorrent" width="35" height="35" /></a></td>
     <td>Open-source torrent client to download legal stuff :)</td>
   </tr>
+  <tr>
+    <td><a href="https://readarr.com/" title="Readarr" target="_blank"> <img src="https://avatars.githubusercontent.com/u/57576474" alt="readarr" width="35" height="35" /></a></td>
+    <td>Readarr is an eBook and audiobook collection manager</td>
+  </tr>
 </table>
 
 ## 🔭 Monitoring
