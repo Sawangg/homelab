@@ -11,4 +11,4 @@ patches:
     patch: |-
       - op: add
         path: /spec/template/spec/containers/0/image
-        value: docker.io/glanceapp/glance:v0.7.12@sha256:078ab2c1cbb0d09fb2445a193bf430224638461e12f4adde105f839a0a26a51f
+        value: docker.io/glanceapp/glance:v0.8.4@sha256:6df86a7e8868d1eda21f35205134b1962c422957e42a0c44d4717c8e8f741b1a
