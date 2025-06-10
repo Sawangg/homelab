@@ -6,4 +6,5 @@ resources:
   - home-assistant
   - prowlarr
   - nginx
+  - qbittorrent
   - unbound

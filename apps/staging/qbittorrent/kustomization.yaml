@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base/qbittorrent/
+
+patches:
+  - target:
+      kind: Deployment
+      name: qbittorrent
+    patch: |-
+      - op: add
+        path: /spec/template/spec/containers/0/image
+        value: ghcr.io/linuxserver/qbittorrent:5.1.0@sha256:22dc2f60b6253356005b6cbb77ea282c788aa9ffb828ca61c43479735913e02c 
