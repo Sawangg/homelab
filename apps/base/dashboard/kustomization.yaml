@@ -12,4 +12,4 @@ resources:
 configMapGenerator:
   - name: glance-cm
     files:
-      - configmap-values.yaml
+      - glance.yml=configmap-values.yaml
