@@ -38,6 +38,10 @@ at home to host a bunch of useful apps.
     <td><a href="https://pi-hole.net/" title="Pi-hole" target="_blank"> <img src="https://avatars.githubusercontent.com/u/16827203" alt="pi-hole" width="40" height="40" /></a></td>
     <td>Custom DNS server with blocking capabilities to route internal traffic</td>
   </tr>
+  <tr>
+    <td><a href="https://goauthentik.io/" title="Authentik" target="_blank"> <img src="https://avatars.githubusercontent.com/u/82976448" alt="authentik" width="40" height="40" /></a></td>
+    <td>Identity provider to allow Single-Sign-On for all deployed apps</td>
+  </tr>
 </table>
 
 ## 📦 Applications
@@ -132,8 +136,8 @@ cluster:
     <td>API token of your DNS management provider of your domain, used to manage your DNS records</td>
   </tr>
   <tr>
-    <td><code>pihole_password</code></td>
-    <td>Password for the web interface of Pi-hole</td>
+    <td><code>authentik_key</code></td>
+    <td>A generated random string of atleast 50 caracters long (ex: `openssl rand -base64 50`)</td>
   </tr>
   <tr>
     <td><code>renovate_token</code></td>
