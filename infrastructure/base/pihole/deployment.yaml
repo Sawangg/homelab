@@ -23,8 +23,6 @@ spec:
         envFrom:
         - configMapRef:
             name: pihole-configmap
-        - secretRef:
-            name: pihole-secret
         ports:
         - containerPort: 53
           protocol: UDP
