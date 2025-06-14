@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - authentik
   - cilium
+  - cloudnative-pg
   - external-secrets
   - cert-manager
   - external-dns
