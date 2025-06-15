@@ -13,3 +13,23 @@ spec:
     name: flux-system
   path: ./infrastructure/staging/
   prune: true
+
+---
+# Kustomization for cloudnative-pg dependent CRs
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cnpg-pg-crs
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infrastructure
+  interval: 5m
+  retryInterval: 1m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/base/cloudnative-pg/config
+  prune: true
+  targetNamespace: cnpg-system
