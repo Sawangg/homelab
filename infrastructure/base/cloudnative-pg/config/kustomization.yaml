@@ -1,5 +1,5 @@
 ---
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: cnpg-cluster
@@ -7,5 +7,10 @@ metadata:
 spec:
   dependsOn:
     - name: cnpg-operator
-  resources:
-    - cluster.yaml
+  interval: 5m
+  path: ./infrastructure/base/cloudnative-pg/config
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  targetNamespace: cnpg-system
