@@ -7,7 +7,7 @@
   "packageRules": [
     {
       "matchFileNames": [
-        "apps/staging/**",
+        "apps/overlays/staging/**",
         "infrastructure/staging/**",
         "clusters/staging/**"
       ],
@@ -16,7 +16,7 @@
     },
     {
       "matchFileNames": [
-        "apps/production/**",
+        "apps/overlays/production/**",
         "infrastructure/production/**",
         "clusters/production/**"
       ],
