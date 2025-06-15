@@ -2,9 +2,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 metadata:
-  name: cnpg-operator
+  name: cnpg-cluster
   namespace: flux-system
-resources:
-  - namespace.yaml
-  - repository.yaml
-  - release.yaml
+spec:
+  dependsOn:
+    - name: cnpg-operator
+  resources:
+    - cluster.yaml
