@@ -17,6 +17,9 @@ spec:
       interval: 12h
   values:
     authentik:
+      postgresql:
+        host: "postgres-cluster-rw.cnpg-system.svc.cluster.local"
+        user: "app"
       error_reporting:
           enabled: false
       disable_update_check: true
