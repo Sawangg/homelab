@@ -5,3 +5,10 @@ resources:
   - namespace.yaml
   - repository.yaml
   - release.yaml
+configMapGenerator:
+  - name: authentik-values
+    namespace: authentik
+    files:
+      - values.yaml=../../configs/authentik/helm-values.yaml
+configurations:
+  - ../../configs/kustomizeconfig.yaml

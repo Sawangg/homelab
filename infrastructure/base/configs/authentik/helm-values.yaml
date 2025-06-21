@@ -1,0 +1,22 @@
+authentik:
+  postgresql:
+    host: "postgres-cluster-rw.cnpg-system.svc.cluster.local"
+    user: "app"
+  error_reporting:
+      enabled: false
+  disable_update_check: true
+  disable_startup_analytics: true
+global:
+  envFrom:
+    - secretRef:
+        name: authentik-secret
+server:
+  route:
+    main:
+      enabled: true
+      hostnames:
+        - "auth.leomercier.dev"
+      https: true
+      parentRefs:
+        - name: external-https-gateway
+          namespace: default
