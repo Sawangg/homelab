@@ -8,8 +8,8 @@ resources:
   - release.yaml
 configMapGenerator:
   - name: external-dns-values
-    files:
-      - values.yaml=values.yaml
     namespace: external-dns
+    files:
+      - values.yaml=../../configs/external-dns/helm-values.yaml
 configurations:
-  - kustomizeconfig.yaml
+  - ../../configs/kustomizeconfig.yaml
