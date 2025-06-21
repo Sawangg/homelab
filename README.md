@@ -40,7 +40,7 @@ at home to host a bunch of useful apps.
   </tr>
   <tr>
     <td><a href="https://cloudnative-pg.io/" title="CloudNativePG" target="_blank"> <img src="https://avatars.githubusercontent.com/u/100373852" alt="cloudnative-pg" width="40" height="40" /></a></td>
-    <td>Database operator for running PostgreSQL clusters</td>
+    <td>Operator for running PostgreSQL databases</td>
   </tr>
   <tr>
     <td><a href="https://goauthentik.io/" title="Authentik" target="_blank"> <img src="https://avatars.githubusercontent.com/u/82976448" alt="authentik" width="40" height="40" /></a></td>
