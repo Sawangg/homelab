@@ -5,3 +5,10 @@ resources:
   - namespace.yaml
   - repository.yaml
   - release.yaml
+configMapGenerator:
+  - name: cert-manager-values
+    namespace: cert-manager
+    files:
+      - values.yaml=../../configs/cert-manager/helm-values.yaml
+configurations:
+  - ../../configs/kustomizeconfig.yaml
