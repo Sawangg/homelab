@@ -10,5 +10,6 @@ configMapGenerator:
   - name: external-dns-values
     files:
       - values.yaml=values.yaml
+    namespace: external-dns
 configurations:
   - kustomizeconfig.yaml
