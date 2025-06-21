@@ -4,3 +4,10 @@ kind: Kustomization
 resources:
   - repository.yaml
   - release.yaml
+configMapGenerator:
+  - name: cilium-values
+    namespace: flux-system
+    files:
+      - values.yaml=../../configs/cilium/helm-values.yaml
+configurations:
+  - ../../configs/kustomizeconfig.yaml
