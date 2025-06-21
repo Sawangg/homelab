@@ -16,5 +16,3 @@ spec:
         kind: HelmRepository
         name: external-secrets
         namespace: external-secrets
-  values:
-    installCRDs: true
