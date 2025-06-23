@@ -11,4 +11,4 @@ patches:
     patch: |-
       - op: add
         path: /spec/template/spec/containers/0/image
-        value: ghcr.io/linuxserver/readarr:0.4.17-develop@sha256:f3978bd06611493011137d82ebdd5e49b3ebb17ad921dbd05017d40b7f2000e3
+        value: ghcr.io/linuxserver/readarr:0.4.18-develop@sha256:b6a7420770adeea5cac1f3ee5da606183d014e3f96fb473f3abd88ed11d9f344
