@@ -3,25 +3,31 @@
   "extends": [
     "config:best-practices"
   ],
-  "labels": ["dependencies"],
+  "labels": [
+    "dependencies"
+  ],
   "packageRules": [
     {
       "matchFileNames": [
         "apps/overlays/staging/**",
-        "infrastructure/staging/**",
+        "infrastructure/overlays/staging/**",
         "clusters/staging/**"
       ],
       "automerge": true,
-      "addLabels": ["cluster: staging"]
+      "addLabels": [
+        "cluster: staging"
+      ]
     },
     {
       "matchFileNames": [
         "apps/overlays/production/**",
-        "infrastructure/production/**",
+        "infrastructure/overlays/production/**",
         "clusters/production/**"
       ],
       "automerge": false,
-      "addLabels": ["cluster: prod"]
+      "addLabels": [
+        "cluster: prod"
+      ]
     }
   ],
   "flux": {
