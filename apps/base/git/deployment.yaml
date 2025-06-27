@@ -1,0 +1,66 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: git
+  namespace: git
+  labels:
+    app: git
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: git
+  template:
+    metadata:
+      labels:
+        app: git
+    spec:
+      securityContext:
+        runAsNonRoot: false
+        fsGroup: 1000
+      containers:
+      - name: git-server
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 22
+        env:
+        # - name: SSH_AUTH_METHODS
+        #   value: "publickey"
+        # - name: SSH_HOST_KEYS_PATH
+        #   value: /tmp/host-keys
+        - name: GIT_USER_UID
+          value: "1000"
+        - name: GIT_USER_GID
+          value: "1000"
+        - name: REPOSITORIES_HOME_LINK
+          value: /srv/git
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: false
+          capabilities:
+            drop:
+            - ALL
+            add:
+            - CHOWN
+            - SETUID
+            - SETGID
+        livenessProbe:
+          tcpSocket:
+            port: 22
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          tcpSocket:
+            port: 22
+          initialDelaySeconds: 5
+          periodSeconds: 5
