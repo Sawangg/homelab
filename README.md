@@ -72,6 +72,10 @@ at home to host a bunch of useful apps.
     <td>Open-source home automation that puts local control and privacy first</td>
   </tr>
   <tr>
+    <td><a href="https://github.com/SoftFever/OrcaSlicer" title="Orca Slicer" target="_blank"> <img src="https://raw.githubusercontent.com/SoftFever/OrcaSlicer/refs/heads/main/resources/images/OrcaSlicer.ico" alt="orca-slicer" width="40" height="40" /></a></td>
+    <td>3D printing slicer based on Bambu Studio and PrusaSlicer with enhanced features</td>
+  </tr>
+  <tr>
     <td><a href="https://prowlarr.com/" title="Prowlarr" target="_blank"> <img src="https://avatars.githubusercontent.com/u/73049443" alt="prowlarr" width="35" height="35" /></a></td>
     <td>Prowlarr is an indexer manager/proxy that supports management of both torrent trackers and usenet indexers</td>
   </tr>
