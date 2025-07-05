@@ -15,4 +15,4 @@ spec:
   rules:
     - backendRefs:
         - name: orca-slicer-svc
-          port: 5800
+          port: 3000

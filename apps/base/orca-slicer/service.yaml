@@ -11,5 +11,5 @@ spec:
     app: orca-slicer
   ports:
     - protocol: TCP
-      port: 5800
-      targetPort: 5800
+      port: 3000
+      targetPort: 3000
