@@ -5,8 +5,9 @@ resources:
   - dashboard
   - git
   - home-assistant
-  - prowlarr
   - nginx
+  - orca-slicer
+  - prowlarr
   - qbittorrent
   - readarr
   - unbound

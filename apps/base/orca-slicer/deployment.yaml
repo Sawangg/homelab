@@ -1,0 +1,59 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orca-slicer
+  namespace: orca-slicer
+  labels:
+    app: orca-slicer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orca-slicer
+  template:
+    metadata:
+      labels:
+        app: orca-slicer
+    spec:
+      containers:
+      - name: orca-slicer
+        # image in kustomization patches
+        imagePullPolicy: IfNotPresent
+        ports:
+          - protocol: TCP
+            containerPort: 5800
+        env:
+          - name: PUID
+            value: "1000"
+          - name: PGID
+            value: "1000"
+          - name: TZ
+            value: "Europe/Paris"
+          - name: DISPLAY_WIDTH
+            value: "1280"
+          - name: DISPLAY_HEIGHT
+            value: "720"
+          - name: VNC_PASSWORD
+            value: ""
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "4Gi"
+            cpu: "2000m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5800
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5800
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
