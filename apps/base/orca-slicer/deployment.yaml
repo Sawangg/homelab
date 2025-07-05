@@ -30,12 +30,6 @@ spec:
             value: "1000"
           - name: TZ
             value: "Europe/Paris"
-          - name: DISPLAY_WIDTH
-            value: "1280"
-          - name: DISPLAY_HEIGHT
-            value: "720"
-          - name: VNC_PASSWORD
-            value: ""
         resources:
           requests:
             memory: "512Mi"
