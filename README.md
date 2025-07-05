@@ -1,7 +1,7 @@
 # Homelab 🏡
 
 State of the art multi-cluster GitOps repository for homelab use. Currently used with my bare metal Kubernetes clusters
-at home to host a bunch of useful apps.
+at home to host a bunch of useful open-source apps.
 
 ## 🏗️ Infrastructure
 
@@ -61,7 +61,7 @@ at home to host a bunch of useful apps.
   </tr>
   <tr>
     <td><a href="https://github.com/glanceapp/glance" title="Glance" target="_blank"> <img src="https://avatars.githubusercontent.com/u/159397742" alt="glance" width="40" height="40" /></a></td>
-    <td>Dashboard with a bunch of features that I use as browser starting page</td>
+    <td>Dashboard with a bunch of features that I use as my browser starting page</td>
   </tr>
   <tr>
     <td><a href="https://git-scm.com/" title="Git" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/git/git-original.svg" alt="git" width="40" height="40" /></a></td>
@@ -69,7 +69,7 @@ at home to host a bunch of useful apps.
   </tr>
   <tr>
     <td><a href="https://www.home-assistant.io/" title="Home Assistant" target="_blank"> <img src="https://avatars.githubusercontent.com/u/13844975" alt="home-assistant" width="35" height="35" /></a></td>
-    <td>Open-source home automation that puts local control and privacy first</td>
+    <td>Home automation that puts local control and privacy first</td>
   </tr>
   <tr>
     <td><a href="https://github.com/SoftFever/OrcaSlicer" title="Orca Slicer" target="_blank"> <img src="https://raw.githubusercontent.com/SoftFever/OrcaSlicer/refs/heads/main/resources/images/OrcaSlicer.ico" alt="orca-slicer" width="40" height="40" /></a></td>
@@ -81,7 +81,7 @@ at home to host a bunch of useful apps.
   </tr>
   <tr>
     <td><a href="https://www.qbittorrent.org/" title="qBittorrent" target="_blank"> <img src="https://avatars.githubusercontent.com/u/2131270" alt="qbittorrent" width="35" height="35" /></a></td>
-    <td>Open-source torrent client to download legal stuff :)</td>
+    <td>Torrent client to download legal stuff :)</td>
   </tr>
   <tr>
     <td><a href="https://readarr.com/" title="Readarr" target="_blank"> <img src="https://avatars.githubusercontent.com/u/57576474" alt="readarr" width="35" height="35" /></a></td>
@@ -145,10 +145,10 @@ cluster:
   </tr>
   <tr>
     <td><code>authentik_key</code></td>
-    <td>A generated random string of atleast 50 caracters long (ex: `openssl rand -base64 50`)</td>
+    <td>Random string of atleast 50 caracters long (ex: <code>openssl rand -base64 50</code>)</td>
   </tr>
   <tr>
     <td><code>renovate_token</code></td>
-    <td>The Git token for the Renovate account</td>
+    <td>Git token for the Renovate account</td>
   </tr>
 </table>
