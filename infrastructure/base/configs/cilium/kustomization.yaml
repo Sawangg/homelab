@@ -6,3 +6,4 @@ resources:
   - l2policy.yaml
   - external-https-gateway.yaml
   - internal-https-gateway.yaml
+  - hubble-route.yaml
