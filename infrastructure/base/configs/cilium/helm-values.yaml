@@ -54,3 +54,9 @@ k8sClientRateLimit:
 # Issue:
 endpointRoutes:
   enabled: true
+
+hubble:
+  relay:
+    enabled: true
+  ui:
+    enabled: true
