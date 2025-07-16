@@ -11,4 +11,4 @@ patches:
     patch: |-
       - op: add
         path: /spec/template/spec/containers/0/image
-        value: docker.io/klutchell/unbound:1.23.0@sha256:17ea6e14cfed57506c9db69686eb4de665056a342922727f3a6bbea50be184e4
+        value: docker.io/klutchell/unbound:1.23.1@sha256:a3412dcc5cf5e98dfde226bca68154a80027aaca5c4ffd864fc89140a446ff57
