@@ -6,6 +6,8 @@ kubeProxyReplacement: true
 operator:
   # Can't have more replicas than nodes
   replicas: 1
+  prometheus:
+    enabled: true
 
 l2announcements:
   enabled: true
@@ -51,7 +53,6 @@ k8sClientRateLimit:
   qps: 15
   burst: 20
 
-# Issue:
 endpointRoutes:
   enabled: true
 
@@ -60,3 +61,9 @@ hubble:
     enabled: true
   ui:
     enabled: true
+  metrics:
+    enableOpenMetrics: true
+    enabled: {dns,drop,tcp,flow,port-distribution,icmp,httpV2:exemplars=true;labelsContext=source_ip\,source_namespace\,source_workload\,destination_ip\,destination_namespace\,destination_workload\,traffic_direction}
+
+prometheus:
+  enabled: true
