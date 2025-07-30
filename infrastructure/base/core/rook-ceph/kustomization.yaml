@@ -7,7 +7,7 @@ resources:
   - release.yaml
 configMapGenerator:
   - name: rook-ceph-values
-    namespace: cert-manager
+    namespace: rook-ceph
     files:
       - values.yaml=../../configs/rook-ceph/helm-values.yaml
 configurations:
