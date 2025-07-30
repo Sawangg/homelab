@@ -11,3 +11,4 @@ resources:
   - pihole
   - kube-prometheus-stack
   - renovate
+  - rook-ceph

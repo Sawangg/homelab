@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - namespace.yaml
+  - repository.yaml
+  - release.yaml
+configMapGenerator:
+  - name: rook-ceph-values
+    namespace: cert-manager
+    files:
+      - values.yaml=../../configs/rook-ceph/helm-values.yaml
+configurations:
+  - ../../configs/kustomizeconfig.yaml

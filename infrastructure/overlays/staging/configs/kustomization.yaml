@@ -10,3 +10,4 @@ resources:
   - ../../../base/configs/external-secrets/
   - ../../../base/configs/pihole/
   - ../../../base/configs/renovate/
+  - ../../../base/configs/rook-ceph/

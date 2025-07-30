@@ -39,6 +39,10 @@ at home to host a bunch of useful open-source apps.
     <td>Custom DNS server with blocking capabilities to route internal traffic</td>
   </tr>
   <tr>
+    <td><a href="https://rook.io/" title="Rook" target="_blank"> <img src="https://avatars.githubusercontent.com/u/22860722" alt="rook" width="40" height="40" /></a></td>
+    <td>Storage Orchestrator to manage a <code>Ceph</code> cluster</td>
+  </tr>
+  <tr>
     <td><a href="https://cloudnative-pg.io/" title="CloudNativePG" target="_blank"> <img src="https://avatars.githubusercontent.com/u/100373852" alt="cloudnative-pg" width="40" height="40" /></a></td>
     <td>Operator for running PostgreSQL databases</td>
   </tr>
@@ -118,12 +122,12 @@ You'll need the following:
 
 - A static public IP address with a router able to forward ports
 - A domain name with a DNS provider usable with [ExternalDNS](https://kubernetes-sigs.github.io/external-dns/latest/#the-latest-release)
+- Any secret provider supported by [External Secrets Operator](https://external-secrets.io/). This repository uses `GitLab` as it's secrets provider
 - An API token of the DNS provider that will allow challenges to create certificates. This repository uses a `Cloudflare` token with the permissions: Zone - DNS - Edit, Zone - Zone - Read & Include - All Zones
 - Another API token of the same provider to manage DNS records. Using `Cloudflare`, the token should have the same
 permissions as above
 - A [GitHub PAT](https://github.com/settings/personal-access-tokens) to be used by `FluxCD`, with Read-Write permissions
 for Admnistration & Contents
-- Any secret provider supported by [External Secrets Operator](https://external-secrets.io/). This repository uses `GitLab`
 
 ### 🔑 Secrets
 
@@ -152,3 +156,18 @@ cluster:
     <td>Git token for the Renovate account</td>
   </tr>
 </table>
+
+motherboard: 1350€ -> https://frame.work/fr/en/products/mainboard-amd-ryzen-7040-series
+ram: 240€ -> https://www.amazon.fr/dp/B0BLTDTD86
+storage: 357€ -> https://www.amazon.fr/dp/B0DGHB9V34
+storage os: 135€
+thunderbolt power cable: 15€
+thunderbolt 10gb: 360€
+power supply: 200€
+
+ups:
+
+router: 718€ + 80€ + 110€ = 898€
+switch: 820€
+wifi antenna: 200€
+
