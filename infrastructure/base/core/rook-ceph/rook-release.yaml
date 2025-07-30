@@ -15,6 +15,3 @@ spec:
         name: rook-ceph
         namespace: rook-ceph
       interval: 1h
-  valuesFrom:
-    - kind: ConfigMap
-      name: rook-ceph-values

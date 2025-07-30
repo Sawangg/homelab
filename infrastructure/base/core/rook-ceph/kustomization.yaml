@@ -4,11 +4,12 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - repository.yaml
-  - release.yaml
+  - rook-release.yaml
+  - ceph-release.yaml
 configMapGenerator:
-  - name: rook-ceph-values
+  - name: ceph-cluster-values
     namespace: rook-ceph
     files:
-      - values.yaml=../../configs/rook-ceph/helm-values.yaml
+      - values.yaml=../../configs/rook-ceph/ceph-helm-values.yaml
 configurations:
   - ../../configs/kustomizeconfig.yaml

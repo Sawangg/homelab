@@ -1,0 +1,11 @@
+cephClusterSpec:
+  mon:
+    count: 1
+
+route:
+  dashboard:
+    parentRefs:
+      - name: internal-https-gateway
+        namespace: default
+    host:
+      name: ceph.internal.leomercier.dev
