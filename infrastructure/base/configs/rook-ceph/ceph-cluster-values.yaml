@@ -2,6 +2,9 @@ cephClusterSpec:
   mon:
     count: 1
 
+toolbox:
+  enabled: true
+
 route:
   dashboard:
     parentRefs:
