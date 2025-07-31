@@ -9,7 +9,7 @@ spec:
 
   storage:
     size: 1Gi
-    storageClass: ""
+    storageClass: "ceph-block"
 
   monitoring:
     enablePodMonitor: true
