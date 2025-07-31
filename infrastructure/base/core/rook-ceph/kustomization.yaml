@@ -10,6 +10,6 @@ configMapGenerator:
   - name: ceph-cluster-values
     namespace: rook-ceph
     files:
-      - values.yaml=../../configs/rook-ceph/ceph-helm-values.yaml
+      - values.yaml=../../configs/rook-ceph/ceph-cluster-values.yaml
 configurations:
   - ../../configs/kustomizeconfig.yaml
