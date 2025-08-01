@@ -10,6 +10,8 @@ global:
   envFrom:
     - secretRef:
         name: authentik-secret
+    - secretRef:
+        name: authentik-postgres-password
 server:
   route:
     main:

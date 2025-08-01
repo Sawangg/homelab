@@ -8,7 +8,7 @@ spec:
   instances: 1
 
   storage:
-    size: 100Mi
+    size: 1Gi
     storageClass: "ceph-block"
 
   monitoring:
