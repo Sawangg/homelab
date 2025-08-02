@@ -44,11 +44,15 @@ at home to host a bunch of useful open-source apps.
   </tr>
   <tr>
     <td><a href="https://cloudnative-pg.io/" title="CloudNativePG" target="_blank"> <img src="https://avatars.githubusercontent.com/u/100373852" alt="cloudnative-pg" width="40" height="40" /></a></td>
-    <td>Operator for running PostgreSQL databases</td>
+    <td>Operator for running PostgreSQL databases clusters with high availability</td>
+  </tr>
+  <tr>
+    <td><a href="https://valkey.io" title="Valkey" target="_blank"> <img src="https://avatars.githubusercontent.com/u/164458127" alt="valkey" width="35" height="35" /></a></td>
+    <td>Open-source high-performance key/value datastore</td>
   </tr>
   <tr>
     <td><a href="https://goauthentik.io/" title="Authentik" target="_blank"> <img src="https://avatars.githubusercontent.com/u/82976448" alt="authentik" width="40" height="40" /></a></td>
-    <td>Identity provider to allow Single-Sign-On for all deployed apps</td>
+    <td>Identity provider to allow Single-Sign-On for any apps</td>
   </tr>
 </table>
 
@@ -156,18 +160,3 @@ cluster:
     <td>Git token for the Renovate account</td>
   </tr>
 </table>
-
-motherboard: 1350€ -> https://frame.work/fr/en/products/mainboard-amd-ryzen-7040-series
-ram: 240€ -> https://www.amazon.fr/dp/B0BLTDTD86
-storage: 357€ -> https://www.amazon.fr/dp/B0DGHB9V34
-storage os: 135€
-thunderbolt power cable: 15€
-thunderbolt 10gb: 360€
-power supply: 200€
-
-ups:
-
-router: 718€ + 80€ + 110€ = 898€
-switch: 820€
-wifi antenna: 200€
-
