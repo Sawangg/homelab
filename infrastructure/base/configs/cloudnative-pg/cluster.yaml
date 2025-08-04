@@ -5,7 +5,7 @@ metadata:
   name: postgres-cluster
   namespace: cnpg-system
 spec:
-  instances: 1
+  instances: 2
 
   storage:
     size: 1Gi
