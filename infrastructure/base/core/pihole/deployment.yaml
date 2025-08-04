@@ -7,7 +7,7 @@ metadata:
   labels:
     app: pihole
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: pihole
@@ -16,20 +16,10 @@ spec:
       labels:
         app: pihole
     spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
-                      - pihole
-              topologyKey: "kubernetes.io/hostname"
       containers:
       - name: pihole
         # image in kusomization patches
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         envFrom:
         - configMapRef:
             name: pihole-configmap
