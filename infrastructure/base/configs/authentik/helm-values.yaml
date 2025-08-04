@@ -2,6 +2,8 @@ authentik:
   postgresql:
     host: "postgres-cluster-rw.cnpg-system.svc.cluster.local"
     user: "app"
+  redis:
+    host: "valkey-svc.valkey.svc.cluster.local"
   error_reporting:
       enabled: false
   disable_update_check: true
