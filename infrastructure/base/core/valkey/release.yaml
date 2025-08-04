@@ -11,9 +11,8 @@ spec:
   chart:
     spec:
       chart: valkey
-      version: 3.0.22
       sourceRef:
-        kind: HelmRepository
+        kind: OCIRepository
         name: bitnami
         namespace: valkey
   valuesFrom:
