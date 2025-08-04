@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: valkey
+  namespace: valkey
+  labels:
+    app: valkey
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: valkey
+  template:
+    metadata:
+      labels:
+        app: valkey
+    spec:
+      containers:
+      - name: valkey
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 6379
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        volumeMounts:
+        - name: valkey-data
+          mountPath: /data
+      volumes:
+      - name: valkey-data
+        emptyDir: {}
