@@ -10,10 +10,9 @@ metadata:
     external-dns.alpha.kubernetes.io/target: "82.64.164.79" # NOTE: Change this to your public ip address
 spec:
   gatewayClassName: cilium
-  infrastructure:
-    annotations:
-      # NOTE: Change this ip to match Cilium's ippool
-      io.cilium/lb-ipam-ips: "192.168.1.10"
+  addresses:
+    - type: IPAddress
+      value: "192.168.1.10" # NOTE: Change this ip to match Cilium's ippool
   listeners:
     - name: websecure
       protocol: HTTPS
