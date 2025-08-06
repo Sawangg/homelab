@@ -10,7 +10,6 @@ spec:
     namespace: nginx
   resources:
   - "@type": type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthz
-    name: authentik-forward-auth
     transport_api_version: V3
     http_service:
       server_uri:
