@@ -11,4 +11,4 @@ patches:
     patch: |-
       - op: add
         path: /spec/template/spec/containers/0/image
-        value: ghcr.io/linuxserver/qbittorrent:5.1.2@sha256:33a6bedcd6c17e60ae48d86af9dbc776f779be446bb42b72313e6d573c75cddb 
+        value: ghcr.io/linuxserver/qbittorrent:5.1.2@sha256:a755d9f116b787a0087fd89df77bbc485c363cb88cf0f71348e25c735e77779e 
