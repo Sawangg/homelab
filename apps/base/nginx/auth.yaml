@@ -5,16 +5,12 @@ metadata:
   name: nginx-forward-auth
   namespace: nginx
 spec:
-  services:
-  - name: nginx
-    namespace: nginx
   resources:
   - "@type": type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthz
     transport_api_version: V3
     http_service:
       server_uri:
         uri: http://ak-outpost-authentik-embedded-outpost.authentik.svc.cluster.local:9000
-        cluster: outbound|9000||ak-outpost-authentik-embedded-outpost.authentik.svc.cluster.local
         timeout: 10s
       path_prefix: "/outpost.goauthentik.io/auth/envoy"
       authorization_request:
@@ -25,6 +21,12 @@ spec:
           - exact: x-forwarded-for
           - exact: x-forwarded-proto
           - exact: x-forwarded-host
+          - exact: x-original-url
+        headers_to_add:
+        - key: X-Forwarded-Proto
+          value: https
+        - key: X-Forwarded-Host
+          value: nginx.leomercier.dev
       authorization_response:
         allowed_upstream_headers:
           patterns:
@@ -33,3 +35,7 @@ spec:
           - exact: x-authentik-email
           - exact: x-authentik-name
           - exact: x-authentik-uid
+        allowed_client_headers:
+          patterns:
+          - exact: set-cookie
+          - exact: location

@@ -11,6 +11,12 @@ spec:
   hostnames:
     - nginx.leomercier.dev
   rules:
-    - backendRefs:
+    - filters:
+        - type: ExtensionRef
+          extensionRef:
+            group: cilium.io
+            kind: CiliumEnvoyConfig
+            name: nginx-forward-auth
+      backendRefs:
         - name: nginx
           port: 80
