@@ -11,4 +11,4 @@ patches:
     patch: |-
       - op: add
         path: /spec/template/spec/containers/0/image
-        value: ghcr.io/home-assistant/home-assistant:2025.7.4@sha256:e5bf3905955081dc4aae3b3980870c43ce6d8ffb880b5447addb3b3ba00f7bc0
+        value: ghcr.io/home-assistant/home-assistant:2025.8.1@sha256:b064da094630c87b97a3b4ac2750a6ee13b251d0b301c8824bb168d57bc12cd0
