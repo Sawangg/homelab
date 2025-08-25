@@ -46,7 +46,7 @@
         "/(^|/)kustomization\\.ya?ml$/"
       ],
       "matchStrings": [
-        "- op: (?:add|replace)\\s+\\s+path: /spec/(?:jobTemplate/)?template/spec/containers/\\d+/image\\s+\\s+value: (?<depName>.+?):(?<currentValue>[^@]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
+        "- op: (?:add|replace)\\s+\\s+path: /spec/(?:template|jobTemplate/spec/template)/spec/containers/\\d+/image\\s+\\s+value: (?<depName>.+?):(?<currentValue>[^@]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
