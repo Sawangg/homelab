@@ -11,6 +11,7 @@
       "matchFileNames": [
         "apps/overlays/staging/**",
         "infrastructure/overlays/staging/**",
+        "monitoring/overlays/staging/**",
         "clusters/staging/**"
       ],
       "automerge": true,
@@ -22,6 +23,7 @@
       "matchFileNames": [
         "apps/overlays/production/**",
         "infrastructure/overlays/production/**",
+         "monitoring/overlays/production/**",
         "clusters/production/**"
       ],
       "automerge": false,

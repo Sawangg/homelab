@@ -9,4 +9,3 @@ resources:
   - ../../../base/configs/external-dns/
   - ../../../base/configs/external-secrets/
   - ../../../base/configs/pihole/
-  - ../../../base/configs/renovate/

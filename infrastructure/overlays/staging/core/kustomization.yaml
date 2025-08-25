@@ -10,6 +10,5 @@ resources:
   - external-dns
   - pihole
   - kube-prometheus-stack
-  - renovate
   - rook-ceph
   - valkey
