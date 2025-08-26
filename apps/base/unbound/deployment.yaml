@@ -7,7 +7,7 @@ metadata:
   labels:
     app: unbound
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: unbound
@@ -17,25 +17,25 @@ spec:
         app: unbound
     spec:
       containers:
-      - name: unbound
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 53
-          protocol: TCP
-        - containerPort: 53
-          protocol: UDP
-        resources:
-          limits:
-            memory: "300Mi"
-            cpu: "500m"
-          requests:
-            memory: "50Mi"
-            cpu: "250m"
-        volumeMounts:
-        - name: unbound-config-volume
-          mountPath: /etc/unbound/custom.conf.d/pihole.conf
-          subPath: pihole.conf
+        - name: unbound
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 53
+              protocol: TCP
+            - containerPort: 53
+              protocol: UDP
+          resources:
+            limits:
+              memory: "300Mi"
+              cpu: "500m"
+            requests:
+              memory: "50Mi"
+              cpu: "250m"
+          volumeMounts:
+            - name: unbound-config-volume
+              mountPath: /etc/unbound/custom.conf.d/pihole.conf
+              subPath: pihole.conf
       volumes:
-      - name: unbound-config-volume
-        configMap:
-          name: unbound-configmap
+        - name: unbound-config-volume
+          configMap:
+            name: unbound-configmap
