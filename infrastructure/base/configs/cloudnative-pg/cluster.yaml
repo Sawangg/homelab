@@ -5,10 +5,10 @@ metadata:
   name: postgres-cluster
   namespace: cnpg-system
 spec:
-  instances: 2
+  instances: 3
 
   storage:
-    size: 1Gi
+    size: 10Gi
     storageClass: "ceph-block"
 
   monitoring:
