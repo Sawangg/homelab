@@ -1,0 +1,11 @@
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: atuin-db
+  namespace: cnpg-system
+spec:
+  name: atuin
+  owner: app
+  cluster:
+    name: postgres-cluster
