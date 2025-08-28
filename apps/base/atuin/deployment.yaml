@@ -41,15 +41,3 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "500m"
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8888
-            initialDelaySeconds: 30
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8888
-            initialDelaySeconds: 10
-            periodSeconds: 5
