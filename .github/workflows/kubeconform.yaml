@@ -1,0 +1,59 @@
+name: Kubeconform
+
+on:
+  pull_request:
+    paths:
+      - "apps/**"
+      - "infrastructure/**"
+      - "clusters/**"
+      - ".github/workflows/kubeconform.yaml"
+  push:
+    branches: [master]
+    paths:
+      - "apps/**"
+      - "infrastructure/**"
+      - "clusters/**"
+      - ".github/workflows/kubeconform.yaml"
+
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache kubeconform schemas
+        uses: actions/cache@v4
+        with:
+          path: .kubeconform-cache
+          key: kubeconform-schemas-${{ runner.os }}-${{ hashFiles('**/*.yaml', '**/*.yml') }}
+          restore-keys: |
+            kubeconform-schemas-${{ runner.os }}-
+
+      - name: Run kubeconform
+        uses: docker://ghcr.io/yannh/kubeconform:v0.7.0-alpine@sha256:8f0eeaaa96ba27ba1500b0e4b1c215acc358d159c62a7ecae58d7a03403287b0
+        with:
+          entrypoint: /kubeconform
+          args: >
+            -strict -summary
+            -n 8
+            -cache .kubeconform-cache
+            --ignore-filename-pattern '(^|/)(kustomization\.ya?ml|kustomizeconfig\.ya?ml|gotk-(sync|components)\.ya?ml|[^/]*-values\.ya?ml)$'
+            -schema-location default
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/{{.Group}}/{{.ResourceKind}}_{{.ResourceAPIVersion}}.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/cilium.io/CiliumEnvoyConfig_v2.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/cilium.io/CiliumClusterwideEnvoyConfig_v2.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/postgresql.cnpg.io/Database_v1.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/external-secrets.io/ExternalSecret_v1beta1.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/cert-manager.io/ClusterIssuer_v1.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/gateway.networking.k8s.io/Gateway_v1beta1.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/external-secrets.io/ClusterSecretStore_v1beta1.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/postgresql.cnpg.io/Cluster_v1.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/cilium.io/CiliumL2AnnouncementPolicy_v2alpha1.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/cilium.io/CiliumLoadBalancerIPPool_v2alpha1.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/generators.external-secrets.io/Password_v1alpha1.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/helm.toolkit.fluxcd.io/HelmRelease_v2beta2.json'
+            -schema-location 'https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/source.toolkit.fluxcd.io/HelmRepository_v1beta2.json'
+            apps/ infrastructure/ clusters/
