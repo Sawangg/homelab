@@ -32,6 +32,9 @@ jobs:
           restore-keys: |
             kubeconform-schemas-${{ runner.os }}-
 
+      - name: Ensure cache directory exists
+        run: mkdir -p .kubeconform-cache
+
       - name: Run kubeconform
         uses: docker://ghcr.io/yannh/kubeconform:v0.7.0-alpine@sha256:8f0eeaaa96ba27ba1500b0e4b1c215acc358d159c62a7ecae58d7a03403287b0
         with:
