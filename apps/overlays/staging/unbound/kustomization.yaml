@@ -24,3 +24,10 @@ patches:
                       values:
                         - unbound
                 topologyKey: kubernetes.io/hostname
+      - op: add
+        path: /spec/strategy
+        value:
+          type: RollingUpdate
+          rollingUpdate:
+            maxSurge: 0
+            maxUnavailable: 1
