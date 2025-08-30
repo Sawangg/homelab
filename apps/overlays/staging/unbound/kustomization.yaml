@@ -12,3 +12,15 @@ patches:
       - op: add
         path: /spec/template/spec/containers/0/image
         value: docker.io/klutchell/unbound:1.23.1@sha256:a3412dcc5cf5e98dfde226bca68154a80027aaca5c4ffd864fc89140a446ff57
+      - op: add
+        path: /spec/template/spec/affinity
+        value:
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              - labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - unbound
+                topologyKey: kubernetes.io/hostname
