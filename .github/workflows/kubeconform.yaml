@@ -6,6 +6,7 @@ on:
       - "apps/**"
       - "infrastructure/**"
       - "clusters/**"
+      - "monitoring/**"
       - ".github/workflows/kubeconform.yaml"
   push:
     branches: [master]
@@ -13,6 +14,7 @@ on:
       - "apps/**"
       - "infrastructure/**"
       - "clusters/**"
+      - "monitoring/**"
       - ".github/workflows/kubeconform.yaml"
   workflow_dispatch:
 
@@ -46,4 +48,4 @@ jobs:
             -schema-location https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/generators.external-secrets.io/Password_v1alpha1.json
             -schema-location https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/helm.toolkit.fluxcd.io/HelmRelease_v2beta2.json
             -schema-location https://raw.githubusercontent.com/CustomResourceDefinition/catalog/refs/heads/main/schema/source.toolkit.fluxcd.io/HelmRepository_v1beta2.json
-            apps/ infrastructure/ clusters/
+            apps/ infrastructure/ clusters/ monitoring/
