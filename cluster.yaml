@@ -1,24 +1,65 @@
----
 kind: Cluster
 name: homelab
 kubernetes:
-  version: 1.33.0
+  version: v1.34.1
 talos:
-  version: v1.10.0
-features:
-  diskencryption: true
+  version: v1.11.1
 patches:
-  - name: cni
-    file: patches/cni.yaml
-  - name: gateway-api
-    file: patches/gateway-api.yaml
-  - name: fluxcd
-    file: patches/fluxcd.yaml
+  - idOverride: 200-homelab
+    inline:
+      cluster:
+        allowSchedulingOnControlPlanes: true
+        extraManifests:
+          - https://github.com/fluxcd/flux2/releases/latest/download/install.yaml
+          - https://github.com/kubernetes-sigs/gateway-api/releases/latest/download/experimental-install.yaml
+        network:
+          cni:
+            name: custom
+            urls:
+              - https://gist.githubusercontent.com/Sawangg/e665e0b78c8870c83c2dc4491a4eb7dc/raw/36ba9c6a238b671c79bb79b18fbd05b7115822b0/cilium.yaml
+        proxy:
+          disabled: true
 ---
 kind: ControlPlane
-machineClass:
-  name: homelab-controlplane
-  size: 1
+machines:
+  - 51713e80-c4dc-11ef-8b61-39ca261a9d00
+  - 563bef80-c4e8-11ef-be35-6cd306766b00
+  - 6f5bcf80-ea82-11ee-a628-58b2daed6800
+---
+kind: Workers
+---
+kind: Machine
+name: 51713e80-c4dc-11ef-8b61-39ca261a9d00
 patches:
-  - name: cilium
-    file: patches/cilium.yaml
+  - idOverride: 400-cm-51713e80-c4dc-11ef-8b61-39ca261a9d00
+    inline:
+      machine:
+        network:
+          hostname: 51713e80-c4dc-11ef-8b61-39ca261a9d00
+          nameservers:
+            - 192.168.1.135
+            - 9.9.9.9
+---
+kind: Machine
+name: 563bef80-c4e8-11ef-be35-6cd306766b00
+patches:
+  - idOverride: 400-cm-563bef80-c4e8-11ef-be35-6cd306766b00
+    inline:
+      machine:
+        network:
+          hostname: 563bef80-c4e8-11ef-be35-6cd306766b00
+          nameservers:
+            - 192.168.1.135
+            - 9.9.9.9
+---
+kind: Machine
+name: 6f5bcf80-ea82-11ee-a628-58b2daed6800
+patches:
+  - idOverride: 400-cm-6f5bcf80-ea82-11ee-a628-58b2daed6800
+    inline:
+      machine:
+        network:
+          hostname: 6f5bcf80-ea82-11ee-a628-58b2daed6800
+          nameservers:
+            - 192.168.1.135
+            - 9.9.9.9
