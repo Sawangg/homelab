@@ -1,0 +1,119 @@
+services:
+  postgres:
+    image: docker.io/postgres:17-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: 123456
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U keycloak -d keycloak -h 127.0.0.1 -p 5432 || exit 1",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+    networks: [app_net]
+    ports:
+      - 5432:5432
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0
+    container_name: keycloak
+    command: ["start-dev", "--http-port=8082"]
+    environment:
+      KEYCLOAK_ADMIN: "admin"
+      KEYCLOAK_ADMIN_PASSWORD: "admin"
+      KC_DB: "postgres"
+      KC_DB_URL_HOST: "postgres"
+      KC_DB_URL_PORT: "5432"
+      KC_DB_URL_DATABASE: "keycloak"
+      KC_DB_USERNAME: "keycloak"
+      KC_DB_PASSWORD: "123456"
+      KC_DB_SCHEMA: "public"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    networks: [app_net]
+    ports:
+      - 8082:8082
+
+  omni:
+    image: ghcr.io/siderolabs/omni:v1.1.4
+    container_name: omni
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - "/dev/net/tun:/dev/net/tun"
+    volumes:
+      - ./etcd:/_out/etcd
+      - ./omni.asc:/omni.asc:ro
+      - /etc/letsencrypt/live/omni.leomercier.dev/fullchain.pem:/tls.crt:ro
+      - /etc/letsencrypt/live/omni.leomercier.dev/privkey.pem:/tls.key:ro
+    command:
+      - "--account-id=20e1574c-4af8-4c78-9e4f-e0c71ef9ec0f"
+      - "--name=onprem-omni"
+      - "--private-key-source=file:///omni.asc"
+      - "--event-sink-port=8091"
+
+      - "--cert=/tls.crt"
+      - "--key=/tls.key"
+      - "--machine-api-cert=/tls.crt"
+      - "--machine-api-key=/tls.key"
+
+      - "--bind-addr=0.0.0.0:443"
+      - "--machine-api-bind-addr=0.0.0.0:8090"
+      - "--k8s-proxy-bind-addr=0.0.0.0:8100"
+
+      # NOTE: Change the domain to your domain that you created certificates for
+      - "--advertised-api-url=https://omni.leomercier.dev/"
+      - "--siderolink-api-advertised-url=https://omni.leomercier.dev:8090/"
+      - "--advertised-kubernetes-proxy-url=https://omni.leomercier.dev:8100/"
+
+      # NOTE: Change the IP to your LAN IP
+      - "--siderolink-wireguard-advertised-addr=192.168.1.135:50180"
+
+      # NOTE: Change the IP to your LAN change "Omni" to your SAML realm name
+      - "--auth-saml-url=http://192.168.1.135:8082/realms/Omni/protocol/saml/descriptor"
+      - "--auth-saml-enabled=true"
+    depends_on:
+      - keycloak
+    restart: unless-stopped
+    networks: [app_net]
+    ports:
+      - "443:443"
+      - "8090:8090"
+      - "8091:8091"
+      - "8100:8100"
+      - "10000:10000"
+      - "50180:50180/udp"
+
+  pihole:
+    image: docker.io/pihole/pihole:latest
+    container_name: pihole
+    environment:
+      TZ: Europe/Paris
+      FTLCONF_dns_listeningMode: all
+      FTLCONF_dns_upstreams: 9.9.9.9
+      FTLCONF_dns_dnssec: "true"
+      FTLCONF_webserver_interface_theme: default-dark
+      FTLCONF_webserver_api_password: ""
+      # NOTE: Change the IP and domain to match the configuration
+      FTLCONF_misc_dnsmasq_lines: "address=/omni.leomercier.dev/192.168.1.135"
+    restart: unless-stopped
+    networks: [app_net]
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8080:80"
+
+volumes:
+  postgres_data: {}
+
+networks:
+  app_net:
