@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: docker.io/postgres:17-alpine
+    image: docker.io/postgres:17-alpine@sha256:d5f196a551b5cef1c70853c6dd588f456d16ca4ea733e3f31c75bc1ae2f65f3f
     container_name: postgres
     environment:
       POSTGRES_DB: keycloak
@@ -23,7 +23,7 @@ services:
       - 5432:5432
 
   keycloak:
-    image: quay.io/keycloak/keycloak:24.0
+    image: quay.io/keycloak/keycloak:24.0@sha256:f8ade94c1d0ad2f2fa7734a455fee5392764f402c43ca35e9af6bf63a2541dc9
     container_name: keycloak
     command: ["start-dev", "--http-port=8082"]
     environment:
@@ -44,7 +44,7 @@ services:
       - 8082:8082
 
   omni:
-    image: ghcr.io/siderolabs/omni:v1.1.4
+    image: ghcr.io/siderolabs/omni:v1.1.4@sha256:bff1387cd7560ee1cd1d9823057d477bc0544c786f6b32238143de284e724285
     container_name: omni
     cap_add:
       - NET_ADMIN
@@ -94,7 +94,7 @@ services:
       - "50180:50180/udp"
 
   pihole:
-    image: docker.io/pihole/pihole:latest
+    image: docker.io/pihole/pihole:latest@sha256:90a1412b3d3037d1c22131402bde19180d898255b584d685c84d943cf9c14821
     container_name: pihole
     environment:
       TZ: Europe/Paris
