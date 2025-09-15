@@ -12,7 +12,8 @@
         "apps/overlays/staging/**",
         "infrastructure/overlays/staging/**",
         "monitoring/overlays/staging/**",
-        "clusters/staging/**"
+        "clusters/staging/**",
+        "cluster-staging.yaml"
       ],
       "automerge": true,
       "addLabels": [
@@ -24,7 +25,8 @@
         "apps/overlays/production/**",
         "infrastructure/overlays/production/**",
         "monitoring/overlays/production/**",
-        "clusters/production/**"
+        "clusters/production/**",
+        "cluster-prod.yaml"
       ],
       "automerge": false,
       "addLabels": [
@@ -50,6 +52,30 @@
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^cluster-(staging|prod)\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "talos:\\s*\\n\\s*version:\\s*(?<currentValue>v?[0-9]+\\.[0-9]+\\.[0-9]+)"
+      ],
+      "depNameTemplate": "siderolabs/talos",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^cluster-(staging|prod)\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "kubernetes:\\s*\\n\\s*version:\\s*(?<currentValue>v?[0-9]+\\.[0-9]+\\.[0-9]+)"
+      ],
+      "depNameTemplate": "kubernetes/kubernetes",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver"
     }
   ]
 }
