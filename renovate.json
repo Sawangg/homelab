@@ -15,6 +15,7 @@
         "clusters/staging/**",
         "cluster-staging.yaml"
       ],
+      "branchTopic": "staging-{{{depNameSanitized}}}-{{{newMajor}}}{{#if separateMinorPatch}}{{#if isPatch}}.{{{newMinor}}}{{/if}}{{/if}}{{#if separateMultipleMinor}}{{#if isMinor}}.{{{newMinor}}}{{/if}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
       "automerge": true,
       "addLabels": [
         "cluster: staging"
@@ -28,6 +29,7 @@
         "clusters/production/**",
         "cluster-prod.yaml"
       ],
+      "branchTopic": "prod-{{{depNameSanitized}}}-{{{newMajor}}}{{#if separateMinorPatch}}{{#if isPatch}}.{{{newMinor}}}{{/if}}{{/if}}{{#if separateMultipleMinor}}{{#if isMinor}}.{{{newMinor}}}{{/if}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
       "automerge": false,
       "addLabels": [
         "cluster: prod"
