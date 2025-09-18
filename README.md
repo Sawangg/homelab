@@ -28,7 +28,7 @@ at home to host a bunch of useful open-source apps.
   </tr>
   <tr>
     <td><a href="https://cert-manager.io/" title="Cert-Manager" target="_blank"> <img src="https://avatars.githubusercontent.com/u/39950598" alt="cert-manager" width="40" height="40" /></a></td>
-    <td>Automatic x.509 certificates management with Gateway API support</td>
+    <td>Automatic X.509 certificates management with Gateway API support</td>
   </tr>
   <tr>
     <td><a href="https://kubernetes-sigs.github.io/external-dns/latest/" title="ExternalDNS" target="_blank"> <img src="https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/docs/img/external-dns.png" alt="externaldns" width="50" height="45" /></a></td>
@@ -36,7 +36,7 @@ at home to host a bunch of useful open-source apps.
   </tr>
   <tr>
     <td><a href="https://pi-hole.net/" title="Pi-hole" target="_blank"> <img src="https://avatars.githubusercontent.com/u/16827203" alt="pi-hole" width="40" height="40" /></a></td>
-    <td>Custom DNS server with blocking capabilities to route internal traffic</td>
+    <td>DNS server with blocking capabilities to route internal traffic</td>
   </tr>
   <tr>
     <td><a href="https://rook.io/" title="Rook" target="_blank"> <img src="https://avatars.githubusercontent.com/u/22860722" alt="rook" width="40" height="40" /></a></td>
