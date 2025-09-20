@@ -11,15 +11,4 @@ configMapGenerator:
     files:
       - values.yaml=helm-values.yaml
 configurations:
-  - |
-    nameReference:
-    - kind: ConfigMap
-      version: v1
-      fieldSpecs:
-      - path: spec/valuesFrom/name
-        kind: HelmRelease
-    - kind: Secret
-      version: v1
-      fieldSpecs:
-      - path: spec/valuesFrom/name
-        kind: HelmRelease
+  - kustomizeconfig.yaml
