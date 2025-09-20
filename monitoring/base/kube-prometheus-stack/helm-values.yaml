@@ -1,0 +1,35 @@
+alertmanager:
+  route:
+    main:
+      enabled: true
+      annotations:
+        external-dns.alpha.kubernetes.io/exclude: "true"
+      hostnames:
+        - "alertmanager.internal.leomercier.dev"
+      parentRefs:
+        - name: internal-https-gateway
+          namespace: default
+
+prometheus:
+  route:
+    main:
+      enabled: true
+      annotations:
+        external-dns.alpha.kubernetes.io/exclude: "true"
+      hostnames:
+        - "prometheus.internal.leomercier.dev"
+      parentRefs:
+        - name: internal-https-gateway
+          namespace: default
+
+grafana:
+  route:
+    main:
+      enabled: true
+      annotations:
+        external-dns.alpha.kubernetes.io/exclude: "true"
+      hostnames:
+        - "grafana.internal.leomercier.dev"
+      parentRefs:
+        - name: internal-https-gateway
+          namespace: default

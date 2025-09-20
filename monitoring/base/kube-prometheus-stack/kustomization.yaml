@@ -5,4 +5,21 @@ resources:
   - namespace.yaml
   - repository.yaml
   - release.yaml
-  - route.yaml
+configMapGenerator:
+  - name: kube-prometheus-stack-values
+    namespace: monitoring
+    files:
+      - values.yaml=helm-values.yaml
+configurations:
+  - |
+    nameReference:
+    - kind: ConfigMap
+      version: v1
+      fieldSpecs:
+      - path: spec/valuesFrom/name
+        kind: HelmRelease
+    - kind: Secret
+      version: v1
+      fieldSpecs:
+      - path: spec/valuesFrom/name
+        kind: HelmRelease

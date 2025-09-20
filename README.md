@@ -128,7 +128,7 @@ at home to host a bunch of useful open-source apps.
 
 ## ☸️ Deploy the Kubernetes clusters
 
-I'm using [Sidero Omni](https://github.com/siderolabs/omni) to manage and deploy my Kubernetes clusters.
+I'm using a self-hosted instance of [Sidero Omni](https://github.com/siderolabs/omni) to manage and deploy my Kubernetes clusters.
 
 You'll need the following:
 
