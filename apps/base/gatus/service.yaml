@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gatus-svc
+  namespace: gatus
+spec:
+  selector:
+    app: gatus
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

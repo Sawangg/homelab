@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - atuin
   - dashboard
+  - gatus
   - git
   - home-assistant
   - nginx

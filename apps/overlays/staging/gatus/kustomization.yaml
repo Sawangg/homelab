@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../../base/gatus/
+
+patches:
+  - target:
+      kind: Deployment
+      name: gatus
+    patch: |-
+      - op: add
+        path: /spec/template/spec/containers/0/image
+        value: ghcr.io/twin/gatus:v5.24.2@sha256:0e333eb7c25e3b5be93eaf94ea182a9f0c97bd69f9902fd0c5769437645dcb75

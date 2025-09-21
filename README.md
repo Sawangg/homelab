@@ -72,6 +72,10 @@ at home to host a bunch of useful open-source apps.
     <td>Dashboard with a bunch of features that I use as my browser starting page</td>
   </tr>
   <tr>
+    <td><a href="https://github.com/TwiN/gatus/" title="Gatus" target="_blank"> <img src="https://raw.githubusercontent.com/TwiN/gatus/refs/heads/master/.github/assets/logo.png" alt="gatus" width="40" height="40" /></a></td>
+    <td>Automated developer-oriented status page </td>
+  </tr>
+  <tr>
     <td><a href="https://atuin.sh/" title="Atuin" target="_blank"> <img src="https://avatars.githubusercontent.com/u/122059230" alt="atuin" width="40" height="40" /></a></td>
     <td>Better shell history that is synced onto any machine</td>
   </tr>
