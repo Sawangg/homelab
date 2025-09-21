@@ -13,7 +13,6 @@
         "infrastructure/overlays/staging/**",
         "monitoring/overlays/staging/**",
         "clusters/staging/**",
-        "cluster-staging.yaml"
       ],
       "branchTopic": "staging-{{{depNameSanitized}}}-{{{newMajor}}}{{#if separateMinorPatch}}{{#if isPatch}}.{{{newMinor}}}{{/if}}{{/if}}{{#if separateMultipleMinor}}{{#if isMinor}}.{{{newMinor}}}{{/if}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
       "automerge": true,
@@ -27,7 +26,6 @@
         "infrastructure/overlays/production/**",
         "monitoring/overlays/production/**",
         "clusters/production/**",
-        "cluster-prod.yaml"
       ],
       "branchTopic": "prod-{{{depNameSanitized}}}-{{{newMajor}}}{{#if separateMinorPatch}}{{#if isPatch}}.{{{newMinor}}}{{/if}}{{/if}}{{#if separateMultipleMinor}}{{#if isMinor}}.{{{newMinor}}}{{/if}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
       "automerge": false,
@@ -58,7 +56,8 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/^cluster-(staging|prod)\\.ya?ml$/"
+        "/^cluster-(staging|prod)\\.ya?ml$/",
+        "/omni.*\\.ya?ml$/"
       ],
       "matchStrings": [
         "talos:\\s*\\n\\s*version:\\s*(?<currentValue>v?[0-9]+\\.[0-9]+\\.[0-9]+)"
@@ -70,7 +69,8 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/^cluster-(staging|prod)\\.ya?ml$/"
+        "/^cluster-(staging|prod)\\.ya?ml$/",
+        "/omni.*\\.ya?ml$/"
       ],
       "matchStrings": [
         "kubernetes:\\s*\\n\\s*version:\\s*(?<currentValue>v?[0-9]+\\.[0-9]+\\.[0-9]+)"
