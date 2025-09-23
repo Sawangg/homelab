@@ -13,7 +13,7 @@
         "infrastructure/overlays/staging/**",
         "monitoring/overlays/staging/**",
         "clusters/staging/**",
-        "omni/cluster-staging.yaml",
+        "omni/cluster-staging.yaml"
       ],
       "branchTopic": "staging-{{{depNameSanitized}}}-{{{newMajor}}}{{#if separateMinorPatch}}{{#if isPatch}}.{{{newMinor}}}{{/if}}{{/if}}{{#if separateMultipleMinor}}{{#if isMinor}}.{{{newMinor}}}{{/if}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
       "automerge": true,
@@ -27,7 +27,7 @@
         "infrastructure/overlays/production/**",
         "monitoring/overlays/production/**",
         "clusters/production/**",
-        "omni/cluster-prod.yaml",
+        "omni/cluster-prod.yaml"
       ],
       "branchTopic": "prod-{{{depNameSanitized}}}-{{{newMajor}}}{{#if separateMinorPatch}}{{#if isPatch}}.{{{newMinor}}}{{/if}}{{/if}}{{#if separateMultipleMinor}}{{#if isMinor}}.{{{newMinor}}}{{/if}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
       "automerge": false,
