@@ -7,7 +7,6 @@ resources:
   - gatus
   - git
   - home-assistant
-  - nginx
   - orca-slicer
   - prowlarr
   - qbittorrent
