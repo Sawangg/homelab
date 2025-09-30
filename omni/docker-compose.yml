@@ -23,7 +23,7 @@ services:
       - 5432:5432
 
   keycloak:
-    image: quay.io/keycloak/keycloak:26.3@sha256:357829ec7c4693397533035092ad13b0644bcc95ded311f33a3738c4d9e9bdba
+    image: quay.io/keycloak/keycloak:26.4@sha256:5f3fb534cde6bf006d79f5912473e5d2c828c707cdfc52e16972803aca9d43dd
     container_name: keycloak
     command: ["start-dev", "--http-port=8082"]
     environment:
