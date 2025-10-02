@@ -8,8 +8,6 @@ metadata:
     app: git
 spec:
   replicas: 1
-  strategy:
-    type: Recreate
   selector:
     matchLabels:
       app: git
@@ -18,49 +16,41 @@ spec:
       labels:
         app: git
     spec:
-      securityContext:
-        runAsNonRoot: false
-        fsGroup: 1000
       containers:
-      - name: git-server
+      - name: gitea
         imagePullPolicy: IfNotPresent
         ports:
-          - containerPort: 22
+          - containerPort: 3000
+          - containerPort: 2222
         env:
-        # - name: SSH_AUTH_METHODS
-        #   value: "publickey"
-        # - name: SSH_HOST_KEYS_PATH
-        #   value: /tmp/host-keys
-        - name: GIT_USER_UID
-          value: "1000"
-        - name: GIT_USER_GID
-          value: "1000"
-        - name: REPOSITORIES_HOME_LINK
-          value: /srv/git
+          - name: GITEA__server__PROTOCOL
+            value: "http"
+          - name: GITEA__server__HTTP_PORT
+            value: "3000"
+          - name: GITEA__server__SSH_PORT
+            value: "2222"
+          - name: GITEA__server__DOMAIN
+            value: "git.internal.leomercier.dev"
+          - name: GITEA__server__ROOT_URL
+            value: "https://git.internal.leomercier.dev"
         resources:
           requests:
-            memory: "64Mi"
-            cpu: "50m"
+            memory: "128Mi"
+            cpu: "100m"
           limits:
-            memory: "256Mi"
-            cpu: "200m"
-        securityContext:
-          allowPrivilegeEscalation: false
-          readOnlyRootFilesystem: false
-          capabilities:
-            drop:
-            - ALL
-            add:
-            - CHOWN
-            - SETUID
-            - SETGID
+            memory: "512Mi"
+            cpu: "500m"
         livenessProbe:
-          tcpSocket:
-            port: 22
-          initialDelaySeconds: 30
+          httpGet:
+            path: /api/healthz
+            port: 3000
+          initialDelaySeconds: 60
           periodSeconds: 10
         readinessProbe:
-          tcpSocket:
-            port: 22
-          initialDelaySeconds: 5
+          httpGet:
+            path: /api/healthz
+            port: 3000
+          initialDelaySeconds: 30
           periodSeconds: 5
+      securityContext:
+        fsGroup: 1000

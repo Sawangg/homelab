@@ -80,7 +80,7 @@ at home to host a bunch of useful open-source apps.
     <td>Better shell history that is synced onto any machine</td>
   </tr>
   <tr>
-    <td><a href="https://git-scm.com/" title="Git" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/git/git-original.svg" alt="git" width="40" height="40" /></a></td>
+    <td><a href="https://about.gitea.com/" title="Gitea" target="_blank"> <img src="https://avatars.githubusercontent.com/u/12724356" alt="gitea" width="40" height="40" /></a></td>
     <td>Git server to host personal stuff likes notes etc.</td>
   </tr>
   <tr>

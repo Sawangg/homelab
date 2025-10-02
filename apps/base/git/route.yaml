@@ -1,0 +1,18 @@
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: git-https-route
+  namespace: git
+  annotations:
+    external-dns.alpha.kubernetes.io/exclude: "true"
+spec:
+  parentRefs:
+    - name: internal-https-gateway
+      namespace: default
+  hostnames:
+    - git.internal.leomercier.dev
+  rules:
+    - backendRefs:
+        - name: git-svc
+          port: 3000
