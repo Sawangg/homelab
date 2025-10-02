@@ -44,7 +44,7 @@ services:
       - 8082:8082
 
   omni:
-    image: ghcr.io/siderolabs/omni:v1.2.0@sha256:4d842071f5e4cc435aceda3a839150097f2e37b9df607a86dacec7d9773abc71
+    image: ghcr.io/siderolabs/omni:v1.2.1@sha256:3dc90126c4dd75d34fdd953221165657e20780cd38da8b8216240ac0d582a2fa
     container_name: omni
     cap_add:
       - NET_ADMIN
