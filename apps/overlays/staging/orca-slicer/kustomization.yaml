@@ -11,4 +11,4 @@ patches:
     patch: |-
       - op: add
         path: /spec/template/spec/containers/0/image
-        value: ghcr.io/linuxserver/orcaslicer:2.3.1@sha256:b983e37bba6b8692d75dad63a13af62af947f9258575f6e78b9504fd0c4d00ae
+        value: ghcr.io/linuxserver/orcaslicer:2.3.1@sha256:c3df1d074c30ff4e18bddce80aa591fce9d37bda718a4ae357f54d658c7eebb8
