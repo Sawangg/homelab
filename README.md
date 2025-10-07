@@ -11,47 +11,47 @@ at home to host a bunch of useful open-source apps.
     <th>Description</th>
   </tr>
   <tr>
-    <td><a href="https://talos.dev/" title="Talos" target="_blank"> <img src="https://avatars.githubusercontent.com/u/13804887" alt="talos" width="35" height="35" /></a></td>
+    <td align="center"><a href="https://talos.dev/" title="Talos" target="_blank"> <img src="https://avatars.githubusercontent.com/u/13804887" alt="talos" width="35" height="35" /></a></td>
     <td>Immutable Linux distro for Kubernetes, allowing to deploy clusters with <code>Omni</code></td>
   </tr>
   <tr>
-    <td><a href="https://cilium.io/" title="Cilium" target="_blank"> <img src="https://avatars.githubusercontent.com/u/21054566" alt="cilium" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://cilium.io/" title="Cilium" target="_blank"> <img src="https://avatars.githubusercontent.com/u/21054566" alt="cilium" width="40" height="40" /></a></td>
     <td>Full network stack, replaces <code>Flannel</code> as the CNI and <code>kube-proxy</code> from <code>Talos</code>. Also used as the Load Balancer with Gateway API support</td>
   </tr>
   <tr>
-    <td><a href="https://fluxcd.io/" title="FluxCD" target="_blank"> <img src="https://avatars.githubusercontent.com/u/52158677" alt="fluxcd" width="50" height="40" /></a></td>
+    <td align="center"><a href="https://fluxcd.io/" title="FluxCD" target="_blank"> <img src="https://avatars.githubusercontent.com/u/52158677" alt="fluxcd" width="50" height="40" /></a></td>
     <td>Fully managed Kubernetes deployment using <code>GitOps</code> practices</td>
   </tr>
   <tr>
-    <td><a href="https://external-secrets.io/" title="External Secrets Operator" target="_blank"> <img src="https://avatars.githubusercontent.com/u/68335991" alt="eso" width="35" height="35" /></a></td>
+    <td align="center"><a href="https://external-secrets.io/" title="External Secrets Operator" target="_blank"> <img src="https://avatars.githubusercontent.com/u/68335991" alt="eso" width="35" height="35" /></a></td>
     <td>Manage secrets remotely & securely from a large list of providers</td>
   </tr>
   <tr>
-    <td><a href="https://cert-manager.io/" title="Cert-Manager" target="_blank"> <img src="https://avatars.githubusercontent.com/u/39950598" alt="cert-manager" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://cert-manager.io/" title="Cert-Manager" target="_blank"> <img src="https://avatars.githubusercontent.com/u/39950598" alt="cert-manager" width="40" height="40" /></a></td>
     <td>Automatic X.509 certificates management with Gateway API support</td>
   </tr>
   <tr>
-    <td><a href="https://kubernetes-sigs.github.io/external-dns/latest/" title="ExternalDNS" target="_blank"> <img src="https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/docs/img/external-dns.png" alt="externaldns" width="50" height="45" /></a></td>
+    <td align="center"><a href="https://kubernetes-sigs.github.io/external-dns/latest/" title="ExternalDNS" target="_blank"> <img src="https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/docs/img/external-dns.png" alt="externaldns" width="50" height="45" /></a></td>
     <td>Manage automatically the DNS records of domains listed in the Gateway API's routes</td>
   </tr>
   <tr>
-    <td><a href="https://pi-hole.net/" title="Pi-hole" target="_blank"> <img src="https://avatars.githubusercontent.com/u/16827203" alt="pi-hole" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://pi-hole.net/" title="Pi-hole" target="_blank"> <img src="https://avatars.githubusercontent.com/u/16827203" alt="pi-hole" width="40" height="40" /></a></td>
     <td>DNS server with blocking capabilities to route internal traffic</td>
   </tr>
   <tr>
-    <td><a href="https://rook.io/" title="Rook" target="_blank"> <img src="https://avatars.githubusercontent.com/u/22860722" alt="rook" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://rook.io/" title="Rook" target="_blank"> <img src="https://avatars.githubusercontent.com/u/22860722" alt="rook" width="40" height="40" /></a></td>
     <td>Storage Orchestrator to manage a <code>Ceph</code> cluster</td>
   </tr>
   <tr>
-    <td><a href="https://cloudnative-pg.io/" title="CloudNativePG" target="_blank"> <img src="https://avatars.githubusercontent.com/u/100373852" alt="cloudnative-pg" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://cloudnative-pg.io/" title="CloudNativePG" target="_blank"> <img src="https://avatars.githubusercontent.com/u/100373852" alt="cloudnative-pg" width="40" height="40" /></a></td>
     <td>Operator for running PostgreSQL databases clusters with high availability</td>
   </tr>
   <tr>
-    <td><a href="https://valkey.io" title="Valkey" target="_blank"> <img src="https://avatars.githubusercontent.com/u/164458127" alt="valkey" width="35" height="35" /></a></td>
+    <td align="center"><a href="https://valkey.io" title="Valkey" target="_blank"> <img src="https://avatars.githubusercontent.com/u/164458127" alt="valkey" width="35" height="35" /></a></td>
     <td>Open-source high-performance key/value datastore</td>
   </tr>
   <tr>
-    <td><a href="https://goauthentik.io/" title="Authentik" target="_blank"> <img src="https://avatars.githubusercontent.com/u/82976448" alt="authentik" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://goauthentik.io/" title="Authentik" target="_blank"> <img src="https://avatars.githubusercontent.com/u/82976448" alt="authentik" width="40" height="40" /></a></td>
     <td>Identity provider to allow Single-Sign-On for any apps</td>
   </tr>
 </table>
@@ -64,43 +64,43 @@ at home to host a bunch of useful open-source apps.
     <th>Description</th>
   </tr>
   <tr>
-    <td><a href="https://www.nlnetlabs.nl/projects/unbound/about/" title="Unbound" target="_blank"> <img src="https://netdata.cloud/img/unbound.png" alt="unbound" width="35" height="35" /></a></td>
+    <td align="center"><a href="https://www.nlnetlabs.nl/projects/unbound/about/" title="Unbound" target="_blank"> <img src="https://netdata.cloud/img/unbound.png" alt="unbound" width="35" height="35" /></a></td>
     <td>Recursive DNS server used with Pi-hole to provide more privacy</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/glanceapp/glance" title="Glance" target="_blank"> <img src="https://avatars.githubusercontent.com/u/159397742" alt="glance" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://github.com/glanceapp/glance" title="Glance" target="_blank"> <img src="https://avatars.githubusercontent.com/u/159397742" alt="glance" width="40" height="40" /></a></td>
     <td>Dashboard with a bunch of features that I use as my browser starting page</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/TwiN/gatus/" title="Gatus" target="_blank"> <img src="https://raw.githubusercontent.com/TwiN/gatus/refs/heads/master/.github/assets/logo.png" alt="gatus" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://github.com/TwiN/gatus/" title="Gatus" target="_blank"> <img src="https://raw.githubusercontent.com/TwiN/gatus/refs/heads/master/.github/assets/logo.png" alt="gatus" width="40" height="40" /></a></td>
     <td>Automated developer-oriented status page </td>
   </tr>
   <tr>
-    <td><a href="https://atuin.sh/" title="Atuin" target="_blank"> <img src="https://avatars.githubusercontent.com/u/122059230" alt="atuin" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://atuin.sh/" title="Atuin" target="_blank"> <img src="https://avatars.githubusercontent.com/u/122059230" alt="atuin" width="40" height="40" /></a></td>
     <td>Better shell history that is synced onto any machine</td>
   </tr>
   <tr>
-    <td><a href="https://about.gitea.com/" title="Gitea" target="_blank"> <img src="https://avatars.githubusercontent.com/u/12724356" alt="gitea" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://about.gitea.com/" title="Gitea" target="_blank"> <img src="https://avatars.githubusercontent.com/u/12724356" alt="gitea" width="40" height="40" /></a></td>
     <td>Git server to host personal stuff likes notes etc.</td>
   </tr>
   <tr>
-    <td><a href="https://www.home-assistant.io/" title="Home Assistant" target="_blank"> <img src="https://avatars.githubusercontent.com/u/13844975" alt="home-assistant" width="35" height="35" /></a></td>
+    <td align="center"><a href="https://www.home-assistant.io/" title="Home Assistant" target="_blank"> <img src="https://avatars.githubusercontent.com/u/13844975" alt="home-assistant" width="35" height="35" /></a></td>
     <td>Home automation that puts local control and privacy first</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/SoftFever/OrcaSlicer" title="Orca Slicer" target="_blank"> <img src="https://raw.githubusercontent.com/SoftFever/OrcaSlicer/refs/heads/main/resources/images/OrcaSlicer.ico" alt="orca-slicer" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://github.com/SoftFever/OrcaSlicer" title="Orca Slicer" target="_blank"> <img src="https://raw.githubusercontent.com/SoftFever/OrcaSlicer/refs/heads/main/resources/images/OrcaSlicer.ico" alt="orca-slicer" width="40" height="40" /></a></td>
     <td>3D printing slicer based on Bambu Studio and PrusaSlicer with enhanced features</td>
   </tr>
   <tr>
-    <td><a href="https://prowlarr.com/" title="Prowlarr" target="_blank"> <img src="https://avatars.githubusercontent.com/u/73049443" alt="prowlarr" width="35" height="35" /></a></td>
+    <td align="center"><a href="https://prowlarr.com/" title="Prowlarr" target="_blank"> <img src="https://avatars.githubusercontent.com/u/73049443" alt="prowlarr" width="35" height="35" /></a></td>
     <td>Prowlarr is an indexer manager/proxy that supports management of both torrent trackers and usenet indexers</td>
   </tr>
   <tr>
-    <td><a href="https://www.qbittorrent.org/" title="qBittorrent" target="_blank"> <img src="https://avatars.githubusercontent.com/u/2131270" alt="qbittorrent" width="35" height="35" /></a></td>
+    <td align="center"><a href="https://www.qbittorrent.org/" title="qBittorrent" target="_blank"> <img src="https://avatars.githubusercontent.com/u/2131270" alt="qbittorrent" width="35" height="35" /></a></td>
     <td>Torrent client to download legal stuff :)</td>
   </tr>
   <tr>
-    <td><a href="https://readarr.com/" title="Readarr" target="_blank"> <img src="https://avatars.githubusercontent.com/u/57576474" alt="readarr" width="35" height="35" /></a></td>
+    <td align="center"><a href="https://readarr.com/" title="Readarr" target="_blank"> <img src="https://avatars.githubusercontent.com/u/57576474" alt="readarr" width="35" height="35" /></a></td>
     <td>Readarr is an eBook and audiobook collection manager</td>
   </tr>
 </table>
@@ -113,19 +113,19 @@ at home to host a bunch of useful open-source apps.
     <th>Description</th>
   </tr>
   <tr>
-    <td><a href="https://grafana.com/" title="Grafana" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/grafana/grafana-original.svg" alt="graphana" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://grafana.com/" title="Grafana" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/grafana/grafana-original.svg" alt="graphana" width="40" height="40" /></a></td>
     <td>Open-source analytics and interactive visualization web application</td>
   </tr>
   <tr>
-    <td><a href="https://prometheus.io/" title="Prometheus" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/prometheus/prometheus-original.svg" alt="prometheus" width="40" height="40" /></a></td>
+    <td align="center"><a href="https://prometheus.io/" title="Prometheus" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/prometheus/prometheus-original.svg" alt="prometheus" width="40" height="40" /></a></td>
     <td>Monitoring system with a dimensional data model, flexible query language & more</td>
   </tr>
   <tr>
-    <td><a href="https://docs.mend.io/renovate/latest/" title="Renovate" target="_blank"> <img src="https://avatars.githubusercontent.com/u/38656520" alt="renovate" width="35" height="35" /></a></td>
+    <td align="center"><a href="https://docs.mend.io/renovate/latest/" title="Renovate" target="_blank"> <img src="https://avatars.githubusercontent.com/u/38656520" alt="renovate" width="35" height="35" /></a></td>
     <td>Automatically inform and updates deployed apps in the clusters</td>
   </tr>
   <tr>
-    <td><a href="https://trivy.dev/" title="Trivy" target="_blank"> <img src="https://avatars.githubusercontent.com/u/12783832" alt="trivy" width="35" height="35" /></a></td>
+    <td align="center"><a href="https://trivy.dev/" title="Trivy" target="_blank"> <img src="https://avatars.githubusercontent.com/u/12783832" alt="trivy" width="35" height="35" /></a></td>
     <td>Kubenative scanner to find security vulnerabilities & misconfigurations</td>
   </tr>
 </table>
