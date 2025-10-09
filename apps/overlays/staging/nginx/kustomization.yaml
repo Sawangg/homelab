@@ -11,4 +11,4 @@ patches:
     patch: |-
       - op: add
         path: /spec/template/spec/containers/0/image
-        value: docker.io/nginx:1.29.2-alpine-slim@sha256:a96e1fcef85d6f8ff094582dcfd9996911d705e1682afd21668c08fac0a28fba
+        value: docker.io/nginx:1.29.2-alpine-slim@sha256:d5cd890c485eab8e763a5f03d34b0f2154480338c94f9974dba5af507d116c9c
