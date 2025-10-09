@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: docker.io/postgres:18-alpine@sha256:70b32afe0c274b4d93098fd724fcdaab3aba47270a4f1e63cbf9cc69d7bf1be4
+    image: docker.io/postgres:18-alpine@sha256:fe5874a6484052c5353272650bb0b21f35082465f82907df4dfb1fe25f042610
     container_name: postgres
     environment:
       POSTGRES_DB: keycloak
