@@ -3,6 +3,29 @@
 State of the art multi-cluster GitOps repository for homelab use. Currently used with my bare metal Kubernetes clusters
 at home to host a bunch of useful open-source apps.
 
+## 🧩 Architecture
+
+The diagram below shows my network and hardware setup. My ISP provides a dedicated public IP address and 10 Gbps throughput. All of my `MS-01` nodes are equipped with 32 GB of RAM.
+
+```mermaid
+%%{init: {'themeVariables': {'clusterBkg':'transparent'}, 'securityLevel': 'loose'}}%%
+graph TD
+    Web@{ shape: cloud, label "Web" } <-->|10G| A(Protecli VP2440<br/>Proxmox)
+
+    subgraph LAN[" "]
+        A e1@<--> B(OPNsense<br/>VM)
+        e1@{ animate: true }
+        B e2@<-->|10G DAC| C(Pro XG 8 PoE Switch)
+        e2@{ animate: true }
+        C e3@<-->|10G| D1[MS-01<br/>Talos]
+        C e4@<-->|10G| D2[MS-01<br/>Talos]
+        C e5@<-->|10G| D3[MS-01<br/>Talos]
+        e3@{ animate: true }
+        e4@{ animate: true }
+        e5@{ animate: true }
+    end
+```
+
 ## 🏗️ Infrastructure
 
 <table>
