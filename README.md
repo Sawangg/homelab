@@ -10,7 +10,7 @@ The diagram below shows my network and hardware setup. My ISP provides a dedicat
 ```mermaid
 %%{init: {'themeVariables': {'clusterBkg':'transparent'}, 'securityLevel': 'loose'}}%%
 graph TD
-    Web@{ shape: cloud, label "Web" } <-->|10G| A(Protecli VP2440<br/>Proxmox)
+    Web@{ shape: cloud, label "Web" } <-->|10G| A(Protectli VP2440<br/>Proxmox)
 
     subgraph LAN[" "]
         A e1@<--> B(OPNsense<br/>VM)
