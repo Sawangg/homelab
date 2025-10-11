@@ -5,7 +5,7 @@ at home to host a bunch of useful open-source apps.
 
 ## 🧩 Architecture
 
-The diagram below shows my network and hardware setup. My ISP provides a dedicated public IP address and 10 Gbps throughput. All of my `MS-01` nodes are equipped with 32 GB of RAM.
+The diagram below shows my network and hardware setup. My ISP provides a dedicated public IP address and 10 Gbps throughput. All of my `MS-01` nodes are equipped with `32 GB` of RAM and `2 To` of M.2 storage.
 
 ```mermaid
 %%{init: {'themeVariables': {'clusterBkg':'transparent'}, 'securityLevel': 'loose'}}%%
