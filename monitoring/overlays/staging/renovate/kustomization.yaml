@@ -11,4 +11,4 @@ patches:
     patch: |-
       - op: add
         path: /spec/jobTemplate/spec/template/spec/containers/0/image
-        value: docker.io/renovate/renovate:41.149.2@sha256:d8a0416237522b3b90463a2e462d9ffa213761b714cf53443cf82cbe46d2b0d3
+        value: docker.io/renovate/renovate:41.150.0@sha256:043f7dcf6356783ab981f01d54f949896595ec280c7f3b9a10de6c5a2ae141e9
