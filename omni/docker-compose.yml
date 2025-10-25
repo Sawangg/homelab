@@ -94,7 +94,7 @@ services:
       - "50180:50180/udp"
 
   pihole:
-    image: docker.io/pihole/pihole:latest@sha256:90a1412b3d3037d1c22131402bde19180d898255b584d685c84d943cf9c14821
+    image: docker.io/pihole/pihole:latest@sha256:0f894459298eb1ead1229c72b7c14c68ac5d107a8bf4d94f4be84062adf59ff7
     container_name: pihole
     environment:
       TZ: Europe/Paris
